@@ -17,7 +17,7 @@
 			    )
 			);
 			$context = stream_context_create($opts);
-			$pathApi = 'https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=220438f60bfa3728e2ba82cdca62706e3ea42015&goal_id=222';
+			$pathApi = 'https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=220438f60bfa3728e2ba82cdca62706e3ea42015&goal_id=164';
 			$result = file_get_contents($pathApi, false, $context);
 
 			$link = 'thanks.html?name='.$name.'&phone='.$phone;
