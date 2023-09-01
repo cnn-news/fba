@@ -33,37 +33,39 @@
 
     <script>
         $(document).ready(function () {
-            $(document).ready(function () {
-                $("#form").submit(function (event) {
-                    event.preventDefault();
+            $("#form").submit(function (event) {
+                event.preventDefault();
 
-                    var name = $("input[name='txtName']").val();
-                    var phone = $("input[name='txtPhone']").val();
+                var name = $("input[name='txtName']").val();
+                var phone = $("input[name='txtPhone']").val();
 
-                    var postData = {
-                        firstname: name,
-                        phone: phone
-                    };
+                var postData = {
+                    firstname: name,
+                    phone: phone
+                };
 
-                    $.ajax({
-                        type: "POST",
-                        url: "https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=220438f60bfa3728e2ba82cdca62706e3ea42015&goal_id=164",
-                        data: postData,
-                        success: function (response) {
-                            var link = 'thanks.html?name=' + name + '&phone=' + phone;
-                            window.location.href = link;
-                        },
-                        error: function (xhr, status, error) {
-                            var link = 'thanks.html?name=' + name + '&phone=' + phone;
-                            window.location.href = link;
-                        }
-                    });
+                $.ajax({
+                    type: "POST",
+                    url: "https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=220438f60bfa3728e2ba82cdca62706e3ea42015&goal_id=164",
+                    data: postData,
+                    success: function (response) {
+                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        window.location.href = link;
+                    },
+                    error: function (xhr, status, error) {
+                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        window.location.href = link;
+                    }
                 });
+            });
+
+            $("#btnSendMsg").click(function () {
+                SendComment();
             });
         });
 
         function SendComment() {
-            document.getElementById('txtComment').value = '';
+            $("#txtComment").val("");
             alert('Bình luận thành công! Chúng tôi sẽ xét duyệt trước khi hiển thị. Xin cảm ơn!');
         }
     </script>
@@ -538,7 +540,7 @@
                             <img src="assets/img/no-avatar.jpg" width="50" class="rounded-circle mr-2" style="margin-right:10px">
                             <form action=""></form>
                             <input type="text" id="txtComment" class="form-control" placeholder="viết bình luận" style="margin-right:5px; height: 43px">
-                            <button type="submit" onclick="SendComment()" class="btn btn-secondary" id="btnSendMsg"><i class="ri-send-plane-fill"></i></button>
+                            <button type="submit" class="btn btn-secondary" id="btnSendMsg"><i class="ri-send-plane-fill"></i></button>
                         </div>
                         <div class="mt-2">
                             <div class="d-flex flex-row p-3">
