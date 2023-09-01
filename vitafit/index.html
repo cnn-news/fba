@@ -29,8 +29,39 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/comment.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
+        $(document).ready(function () {
+            $(document).ready(function () {
+                $("#form").submit(function (event) {
+                    event.preventDefault();
+
+                    var name = $("input[name='txtName']").val();
+                    var phone = $("input[name='txtPhone']").val();
+
+                    var postData = {
+                        firstname: name,
+                        phone: phone
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: "https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=220438f60bfa3728e2ba82cdca62706e3ea42015&goal_id=164",
+                        data: postData,
+                        success: function (response) {
+                            var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                            window.location.href = link;
+                        },
+                        error: function (xhr, status, error) {
+                            var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                            window.location.href = link;
+                        }
+                    });
+                });
+            });
+        });
+
         function SendComment() {
             document.getElementById('txtComment').value = '';
             alert('Bình luận thành công! Chúng tôi sẽ xét duyệt trước khi hiển thị. Xin cảm ơn!');
@@ -468,7 +499,7 @@
                     <span class="badge bg-danger"><i class="bi bi-clock-fill"></i> <span id="timer">30 : 00</span></span>
                 </div>
 
-                <form id="form" class="row g-3 needs-validation" method="post" action="buynow_process.php">
+                <form id="form" class="row g-3 needs-validation" action="#" method="post">
                     <div class="col-12">
                         <label for="yourName" class="form-label">Họ tên <i class="bi bi-person"></i></label>
                         <input type="text" id="txtName" name="txtName" class="form-control" required>
