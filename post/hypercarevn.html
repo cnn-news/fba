@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Bác sĩ tim mạch nổi tiếng Việt Nam chia sẻ</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/comment.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#form").submit(function (event) {
+                event.preventDefault();
+
+                var name = $("input[name='txtName']").val();
+                var phone = $("input[name='txtPhone']").val();
+
+                var postData = {
+                    firstname: name,
+                    phone: phone
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=220438f60bfa3728e2ba82cdca62706e3ea42015&goal_id=324",
+                    data: postData,
+                    success: function (response) {
+                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        window.location.href = link;
+                    },
+                    error: function (xhr, status, error) {
+                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        window.location.href = link;
+                    }
+                });
+            });
+
+            $("#btnSendMsg").click(function () {
+                SendComment();
+            });
+        });
+
+        function SendComment() {
+            $("#txtComment").val("");
+            alert('Bình luận thành công! Chúng tôi sẽ xét duyệt trước khi hiển thị. Xin cảm ơn!');
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '805812500946580');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=805812500946580&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center bg-success">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <i class="bi bi-list toggle-sidebar-btn text-white"></i>
+
+        </div><!-- End Logo -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center" style="margin-right: 20px;">
+                <li class="nav-item" style="margin-right: 10px;">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <h1 class="text-white fw-light text-uppercase" style="font-size: 2.3em; margin-top: 10px;">sức khỏe</h1>
+                    </a>
+
+                </li><!-- End Profile Nav -->
+                <li class="nav-item">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/logo.png" alt="Profile" class="rounded">
+                    </a>
+
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav text-uppercase" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">Trang chủ</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">Bóng đá</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">Kinh doanh</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">Sức khỏe</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">hi-tech</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">thế giới</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">thể thao</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">giải trí</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">phái đẹp</span>
+                </a>
+            </li>
+        </ul>
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+        <div class="row">
+            <div class="col">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#buynow" class="text-success">Trang chủ</a></li>
+                        <li class="breadcrumb-item">Sức khỏe</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="col text-end" style="color: #899bbd; font-size: 14px;">
+                <i class="bi bi-calendar-week"></i> <span id="today"></span></a>
+            </div>
+        </div>
+
+        <div class="pagetitle">
+            <h1 class="text-success">Sau khi mạch máu được làm sạch, cao huyết áp ở người già và 9 bệnh nan y khác cũng biến mất</h1>
+        </div><!-- End Page Title -->
+
+        <div style="clear: both;"></div>
+
+        <div class="content">
+
+            <a href="#buynow">
+                <img src="assets/img/Hypercare-vn/content-1.jpg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+            <div class="text-center" style="font-size: 0.8em">
+                <i>Bác sĩ tim mạch nổi tiếng Việt Nam chia sẻ</i>
+            </div><br>
+            <p>GS.TS Đào Thiện Hải – Bác sĩ Tim mạch nổi tiếng hàng đầu tại Việt Nam được biết đến với phương pháp điều trị cao huyết áp không cần dùng thuốc. Theo ông: <b>“BẤT KỲ AI CŨNG CÓ THỂ TỰ LÀM SẠCH MẠCH MÁU TẠI NHÀ ĐỂ NÂNG CAO SỨC KHỎE”.</b> Việc làm sạch như vậy sẽ giúp loại bỏ áp lực trên thành mạch, ổn định huyết áp và chữa khỏi 9 bệnh nan y cho con người.</p>
+
+            <p>
+                Giáo sư Đào Thiện Hải rất ít khi trả lời phỏng vấn trước truyền thông. Vì ông chỉ muốn chuyên tâm vào công việc nghiên cứu và điều trị cho các bệnh nhân. Nhưng hôm nay, nhóm phóng viên của chúng tôi thật may mắn khi được giáo sư bớt chút thời gian để trả lời một số câu hỏi nhỏ cho bệnh nhân trên toàn quốc không có cơ hội đăng ký khám trực tiếp.
+            </p>
+
+            <p>
+                Bài viết dưới đây sẽ chúng tôi giúp cho độc giả giải quyết được 4 câu hỏi lớn liên quan đến bí quyết làm sạch mạch máu:
+            </p>
+
+            <p>
+                <ul>
+                    <li>Sống đến 120 tuổi mà không cần dùng thuốc!</li>
+                    <li>Tại sao các bệnh lý mãn tính đều liên quan đến mạch máu bẩn?</li>
+                    <li>Dấu hiệu nhận biết mạch máu bị nhiễm bẩn?</li>
+                    <li>Các phương pháp giúp làm sạch mạch máu hiệu quả?</li>
+                </ul>
+            </p>
+
+            <p><b>Phóng viên: Có thông tin cho rằng mạch máu bẩn là nguyên nhân chính dẫn đến cái chết của hàng triệu người mỗi năm. Ông có ý kiến gì về nhận định này không?</b></p>
+
+            <p><b>Giáo sư Đào Thiện Hải:</b></p>
+
+            <p>
+                Tôi sẽ cung cấp cho bạn một số dữ liệu rất trực quan để giúp bạn hiểu rõ hơn về vấn đề này. Theo thống kê của Tổ chức Y tế thế giới ghi nhận có khoảng 6,5 triệu người tử vong mỗi năm do đột quỵ. Tức là cứ trung bình mỗi 6 giây có một ca tử vong vì đột quỵ. Nguyên nhân chính gây đột quỵ chủ yếu là do tắc mạch máu vì cholesterol trên thành mạch tích tụ lâu ngày không được làm sạch. Không chỉ gây ảnh hưởng đến tính mạng, mạch máu bẩn còn là nguyên nhân chính gây ra các bệnh lý tim mạch mãn tính ảnh hưởng nghiêm trọng đến sức khỏe con người. 94% trường hợp không thể sống quá 80 tuổi.
+            </p>
+
+            <p class="text-center"><b>CHOLESTEROL ĐÃ HỦY HOẠI SỨC KHỎE CỦA CON NGƯỜI. NẾU KHÔNG CÓ CHOLESTEROL TRONG MẠCH MÁU THÌ CON NGƯỜI CÓ THỂ SỐNG ĐẾN 120 TUỔI.</b></p>
+
+            <p><b>Phóng viên: Ông có thể giải thích cho độc giả biết Cholesterol là gì? Và trông nó như thế nào không?</b></p>
+
+            <p><b>Giáo sư Đào Thiện Hải:</b></p>
+
+            <p>Tôi sẽ không đưa ra mô tả về chất này ở đây, vì nó đã được viết trong sách giáo khoa y khoa. Hãy để tôi nói một cách đơn giản cho các bạn dễ tưởng tượng: Cholesterol giống phần mỡ thừa còn sót lại trong một chiếc chảo chưa được rửa sạch sau bữa tối. Những mảng mỡ trắng bám trên chiếc chảo chính là hình ảnh chính xác nhất để mô tả về cholesterol trong mạch máu.</p>
+
+            <p>
+                Khi chất này tích tụ và bám trên thành mạch máu đầu tiên có thể khiến cho kích thước mạch máu tăng nhẹ (trong 20-25 năm), sau đó lớp cholesterol sẽ làm biến dạng mạch máu (trong 25-40 năm tiếp theo). SAU 40 NĂM, CHOLESTEROL SẼ SẼ LÀM ẢNH HƯỞNG ĐẾN TỐC ĐỘ VẬN CHUYỂN MÁU TRÊN CƠ THỂ. Để đối phó với điều này, tim không còn cách nào khác ngoài tăng áp lực bơm máu gây ra tình trạng cao huyết áp. Điều này giải thích vì sao 80% người cao tuổi ở Việt Nam mắc cao huyết áp. Nhưng đây vẫn chưa phải là biến chứng nguy hiểm nhất!
+            </p>
+
+            <p>
+                Biến chứng nguy hiểm hơn cả là khi cholesterol làm tắc nghẽn mạch máu. Kết quả sẽ làm suy giảm nguồn cung cấp máu đến cơ quan trong cơ thể. Từ đó dẫn đến hàng loạt các bệnh lý mã tính nghiêm trọng khác như: đau đầu, đau lưng, đau cổ vai gáy, đau nhức chân, hoa mắt, chóng mặt, đãng trí…
+            </p>
+            <a href="#buynow">
+                <img src="assets/img/Hypercare-vn/content-2.jpg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+            <div class="text-center" style="font-size: 0.8em">
+                <i>Đến 50-60 tuổi, một người tích lũy tới 3,5kg cholesterol trong mạch máu!</i>
+            </div><br>
+
+            <p>Nói một cách khác thì con người muốn khỏe mạnh hay không phụ thuộc rất nhiều vào sức khỏe mạch máu trong cơ thể. Nếu mạch máu bị tắc nghẽn ở khu vực chi dưới sẽ đến sưng đau, phù nề vĩnh viễn ở chân. Nếu mạch máu ở gan bị nhiễm bẩn sẽ gây ra tình trạng gan nhiễm mỡ và xơ gan. Nếu mạch máu ở khớp sẽ dẫn đến bệnh lý viêm khớp, thoái hóa khớp và thoái hóa cột sống…Nếu mạch máu ở mắt bị tắc nghẽn sẽ dẫn đến tình trạng suy giảm thị lực và thậm chí là mù lòa. Mạch máu nhiễm bẩn cũng chính là nguyên nhân gây ra tình trạng lão hóa da nhanh chóng.</p>
+
+            <p>
+                Không thể tránh được sự ô nhiễm mạch máu! Nó tích tụ trong mạch của mỗi người. Bụi bẩn trong mạch máu là nguyên nhân khiến da bị lão hóa nhanh chóng. ĐÓ LÀ BIỂU HIỆN CỦA CHOLESTEROL BẮT ĐẦU PHẢN ỨNG CHUỖI LÃO HÓA TRONG CƠ THỂ. Và chính sự ô nhiễm của các mạch máu đã rút ngắn tuổi thọ của một người ít hơn số tuổi mà tạo hóa ban cho anh ta. Thay vì khoảng thời gian 120 năm (đây là loại tài nguyên mà cơ thể chúng ta có), thì các bạn không thể sống đến quá 70. Đặc biệt là những người mắc bệnh tăng huyết áp thậm chí chỉ còn sống đến 40 – 50 tuổi!
+            </p>
+
+            <p><b>Phóng viên: Ngoài Cholesterol thì còn có những chất nào có thể gây ô nhiễm mạch máu nữa không?</b></p>
+
+            <p><b>Giáo sư Đào Thiện Hải:</b></p>
+
+            <p>
+                Cholesterol không phải là thủ phạm duy nhất gây tắc nghẽn và ô nhiễm mạch máu còn có 2 chất nữa rất nguy hiểm tích tụ tại thành mạch đó là:
+            </p>
+
+            <p class="text-center"><b>Huyết khối</b></p>
+
+            <p>
+                Nếu cholesterol giống chất béo, thì khối huyết khối (cục máu đông) lại giống với miếng pho mát. Sự tích tụ huyết khối hình thành trên thành trong của mạch máu thậm chí còn cao hơn với cholesterol. KHI HUYẾT KHỐI XUẤT HIỆN CÓ THỂ GÂY ÁCH TẮC MẠCH MÁU LÀM CHO MÁU KHÔNG ĐƯỢC VẬN CHUYỂN ĐẾN NÃO VÀ TIM DẪN ĐẾN BIẾN CHỨNG NGUY HIỂM. Càng lớn tuổi, nguy cơ hình thành cục máu đông càng cao. Đây là lý do tại sao những người lớn tuổi thường bị ngã vì đột quỵ hoặc đau tim.
+            </p>
+
+            <p class="text-center">
+                <b>Tinh thể canxi vôi hóa</b>
+            </p>
+
+            <p>
+                Đây là muối của kim loại nặng, thủy ngân, các chất hóa học khác nhau được tích tụ trong môi trường sống của chúng ta. Ví dụ, nếu một người làm việc trong lĩnh vực sản xuất công nghiệp độc hại, thì trong máu anh ta có nguy cơ tích tụ nhiều tinh thể canxi vôi hóa này. Những chất này đã được chứng minh còn góp phần vào sự phân chia tế bào bất thường, dẫn đến ung thư. Gần 98% những người chết vì ung thư có lượng tinh thể lắng đọng trong máu cao.
+            </p>
+            <a href="#buynow">
+                <img src="assets/img/Hypercare-vn/content-3.jpg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+            <br />
+
+            <p><b>Phóng viên: Làm thế nào chúng ta có thể biết được rằng mạch máu của tôi đang bị nhiễm bẩn?</b></p>
+
+            <p><b>Giáo sư Đào Thiện Hải:</b></p>
+
+            <p>
+                Tôi có thể khẳng định với các bạn rằng nếu đến 50 tuổi mà chưa làm sạch mạch máu thì mạch máu của bạn chắc chắn đã bị nhiễm bẩn. Một số triệu chứng giúp bạn có thể nhận biết mạch máu bị nhiễm bẩn:
+            </p>
+
+            <p>
+                <ul>
+                    <li>Sưng đau khớp xương vào buổi sáng</li>
+                    <li>Hoa mắt</li>
+                    <li>Chóng mặt</li>
+                    <li>Khó ngủ vào ban đêm và buồn ngủ vào ban ngày</li>
+                    <li>Cảm thấy mệt mỏi liên tục</li>
+                    <li>Suy giảm thị lực</li>
+                    <li>Suy giảm trí nhớ</li>
+                    <li>Suy giãn tĩnh mạch</li>
+                    <li>Khó thở</li>
+                    <li>Các vấn đề thường gặp với đường tiêu hóa</li>
+                    <li>Vấn đề thừa cân…</li>
+                </ul>
+            </p>
+
+            <p>
+                Thậm chí khi không xuất hiện những dấu hiệu trên, các bạn cũng nên làm sạch mạch máu định kỳ hàng năm. Sức khỏe của bạn chắc chắn sẽ được cải thiện tốt hơn.
+            </p>
+
+            <p><b>Phóng viên: Như vậy làm sạch mạch máu có thể kéo dài tuổi thọ và ổn định huyết áp cho người già?</b></p>
+
+            <p><b>Giáo sư Đào Thiện Hải:</b></p>
+
+            <p>
+                Vâng chính xác là như vậy. Hiện nay, tại phòng khám của chúng tôi thường chỉ định liệu pháp làm sạch mạch máu cho tất cả các bệnh nhân trên 50 (trong một số trường hợp trên 40 tuổi). Và sau khi làm sạch, chúng tôi kiểm tra và nhận thấy: CỨ 10 NGƯỜI ĐƯỢC LÀM SẠCH MẠCH MÁU THÌ CÓ ĐẾN 9 NGƯỜI ỔN ĐỊNH ĐƯỢC HUYẾT ÁP NGAY LẬP TỨC MÀ KHÔNG CẦN ĐIỀU TRỊ. Nhiều người cho biết rằng trước đây họ có sử dụng thuốc ổn định huyết áp hàng ngày mà kết quả không được như thế này. Tất cả những gì cần thiết chỉ là làm sạch mạch máu. Không chỉ có huyết áp được ổn định mà tình trạng sức khỏe còn được cải thiện tốt hơn.
+            </p>
+
+            <p>
+                Nhưng thật không may, cách ổn định huyết áp đơn giản này lại bị chính các bác sĩ và các công ty dược phẩm thông đồng với nhau che giấu. Vì họ biết lợi nhuận thu được từ việc điều trị bệnh cao huyết áp là rất lớn. Rốt cuộc, một người bị bệnh càng lâu thì anh ta lại càng phải chi nhiều tiền thuốc hơn. Đây chính là nguồn lợi nhuận khổng lồ cho họ. Trong khi đó việc làm sạch mạch máu lại rất đơn giản, chi phí thấp khiến họ không thể kiếm chác được.
+            </p>
+
+            <p><b>Một người hưu trí Việt Nam đã khỏi bệnh tăng huyết áp nhờ làm sạch mạch máu. Và có rất nhiều người như vậy….</b></p>
+
+            <p>
+                Tôi muốn cho các bạn xem một bức thư của bà Vũ Thị Chang sống ở huyện miền núi của tỉnh Quảng Ninh. Từng bị bệnh viện trả về nằm chờ chết nhưng bà ấy đã không bỏ cuộc. Bản thân bà lúc ấy đã quá yếu không thể đến gặp chúng tôi trực tiếp. Vì vậy, con gái của bà đã gọi điện đến phòng khám của chúng tôi để yêu cầu được giúp đỡ. Làm thế nào ở khoảng cách xa như thế mà chúng tôi có
+            </p>
+
+            <p>
+                Các bác sĩ tại một bệnh viện địa phương đã kết luận rằng cô ấy xuống mồ. Bà con nhất quyết không bỏ cuộc. Bản thân bà cụ không thể đến gặp chúng tôi, vì vậy con gái bà đã gọi điện đến phòng khám của chúng tôi với yêu cầu giúp đỡ. Khoảng cách xa xôi khiến cho tôi không thể tiếp cận được với bệnh nhân. Tôi thậm chí không thể chẩn đoán qua điện thoại. Lúc đó, tôi chỉ khuyên cô ấy tự làm mạch máu tại nhà.
+            </p>
+
+            <p><b>Sau 3 tháng, chính bà Chang đã viết thư cho chúng tôi! Tôi muốn cho bạn xem lá thư của bà ấy.</b></p>
+
+            <a href="#buynow">
+                <img src="assets/img/Hypercare-vn/content-4.jpg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+            <div class="text-center" style="font-size: 0.8em">
+                <i>Bà Vũ Thị Chang, 75 tuổi – Người đã từng suýt chết vì cao huyết áp và các bệnh lý nền khác.</i>
+            </div><br>
+
+            <p><b>“Cảm ơn bác sĩ rất nhiều chính ông đã cứu sống tôi trong lúc nguy kịch nhất! Khi con gái bác sĩ, tôi thực sự đã bất tỉnh không biết gì cả. Toàn thân tê liệt, tôi chỉ biết nằm một chỗ thoi thóp qua ngày. Tôi bị nhồi máu não khi được đưa đến bệnh viện, bác sĩ sau khi kiểm tra qua loa. Họ còn không thèm điều trị cho tôi mà chỉ bảo con gái hãy mang tôi về chuẩn bị lo hậu sự. Nhưng con gái tôi đã không bỏ cuộc mà kiên quyết gọi điện thoại cho bác sĩ. Và sau đó con bé bắt đầu đưa cho tôi uống một loại thuốc mà bác sĩ gửi xuống. May mắn thay, chỉ sau 1 tuần bệnh của tôi đã có chuyển biến tốt. Đặc biệt, huyết áp ổn định không hề tăng. Tôi đã bắt đầu tỉnh táo lại được trở về từ cõi chết. Một tuần trước, tôi được con gái đi kiểm tra tại bệnh viện huyện. Khi nhận kết quả thấy các chỉ số đều tốt. Tôi thậm chí còn khỏe mạnh so với lứa tuổi của mình. Điều này khiến tôi đã rất ngạc nhiên. Cách đây chỉ vài tháng, tôi nghĩ mình đã đặt một chân xuống mồ rồi. Nhưng bây giờ tôi tự tin rằng mình chắc chắn sẽ sống. Và thậm chí còn có thể sống khỏe mạnh đến 100 tuổi. Cảm ơn bác sĩ rất nhiều vì sự giúp đỡ của bạn đã tái sinh tôi thêm một lần nữa. "</b></p>
+
+            <p>
+                ĐÂY THỰC SỰ LÀ NHỮNG ĐIỀU “THẦN KỲ” CÓ THỂ XẢY RA SAU KHI LÀM SẠCH MẠCH MÁU. Trên thực tế không hề có phép màu nào xảy ra ở đây. Nhưng tác dụng mà nó mang lại khiến cho bạn thực sự phải nể phục.
+            </p>
+
+            <p><b>Phóng viên: Phương pháp làm sạch mạch máu mà giáo sư nhắc ở trên là gì? Ông có thể chia sẻ chi tiết cho độc giả được biết không?</b></p>
+
+            <p><b>Giáo sư Đào Thiện Hải:</b></p>
+
+            <p>
+                Phương pháp làm sạch mạch máu mà tôi nhắc đến ở trên là sử dụng một sản phẩm mới là <a href="#buynow" style="color: blue">Hypercare</a>. Hiện nay ở Việt Nam mới chỉ có duy nhất sản phẩm này đáp ứng được nhiệm vụ làm sạch mạch máu. <a href="#buynow" style="color: blue">Hypercare</a> được phát triển từ năm 2015 bởi Viện Tim Mạch Quốc Gia. Trong sản phẩm này có chứa khoảng 40 thành phần hoạt tính được chiết xuất từ thiên nhiên rất tốt cho hệ thống mạch máu trong cơ thể.
+            </p>
+
+            <p>
+                Trong đó thành phần quan trọng nhất phải kể đến là Nattokinase (đậu tương lên men) đây là một món ăn nổi tiếng nhất của Nhật. Chúng có khả năng làm sạch các chất ô nhiễm, cặn bẩn tích tụ trong mạch máu. Đồng thời chúng còn giúp hòa tan cholesterol, đánh bật các cục máu đông và các tinh thể canxi ra khỏi mạch máu. Nguyên liệu này lần đầu tiên được phát hiện vào năm 2007 bởi các nhà khoa học Nhật Bản. Đối với nghiên cứu trong lĩnh vực này, hai nhà khoa học Nhật Bản đã nhận được giải thưởng Nobel. Ngày nay, Nattokinase đã được ứng dụng rất nhiều trong y học thế giới.
+            </p>
+
+            <p><b>Người Nhật từ lâu đã rất quan tâm đến việc làm sạch mạch máu sau độ tuổi 40-50. Từ năm 1965, Chương trình Quốc gia về Cải thiện Sức khỏe và Tuổi thọ được thông qua có mục tiêu khuyến khích người dân định kỳ làm sạch mạch máu hàng năm. Và hôm nay chúng ta thấy kết quả tuyệt vời của quyết định như vậy khi người dân Nhật Bản đã giữ kỷ lục về tuổi thọ nhiều năm nay. Tuổi thọ trung bình của người Nhật rất cao. Và chuyện sống đến 100 tuổi đối với người Nhật là một điều rất phổ biến. Nếu trước đây người Nhật thường làm sạch mạch máu bằng thảo mộc, tập thể dục và yoga. Thì giờ đây họ sử dụng các chế phẩm đặc biệt có tên là <a href="#buynow" style="color: blue">Hypercare</a>.</b></p>
+
+            <p style="font-size:1.5em"><b>Phóng viên: <a href="#buynow" style="color: blue">Hypercare</a> là sản phẩm gì? Chúng ta phải dùng <a href="#buynow" style="color: blue">Hypercare</a> bao nhiêu lâu để làm sạch được mạch máu?</b></p>
+
+            <p>
+                <a href="#buynow" style="color: blue">Hypercare</a> là tên của một loại thực phẩm bảo vệ sức khỏe do các nhà khoa học Nhật Bản nghiên cứu và sản xuất. Sản phẩm này có tác dụng ổn định huyết áp, giảm cholesterol, ngăn ngừa xơ vữa động mạch, huyết khối. Hỗ trợ làm sạch mạch máu cho cơ thể khỏe mạnh hơn. Nếu như trước đây để làm sạch mạch máu người ta phải mất ít nhất từ Trung bình một liệu trình dùng <a href="#buynow" style="color: blue">Hypercare</a> để làm sạch mạch máu kéo dài 2-4 tuần. Khi kết thúc liệu trình này thì bạn cần xem xét sức khỏe của mình như thế nào. Nếu là người có sẵn các bệnh lý nền như cao huyết áp, máu nhiễm mỡ, tim mạch…Thì nên sử dụng định kì 1 năm 1 liệu trình để đảm bảo sức khỏe mạch máu.
+            </p>
+
+            <p>
+                Khi <a href="#buynow" style="color: blue">Hypercare</a> đi vào cơ thể sẽ giúp làm tan các cặn cholesterol, cục máu đông và canxi tích tụ trên thành mạch máu. Ngoài ra nhờ chiết xuất rutin có trong thành phần còn giúp làm tăng cường độ bền và độ đàn hồi của mạch máu giúp chúng khỏe mạnh hơn. Sau 1 tháng sử dụng theo dữ liệu nghiên cứu từ nhiều bệnh nhân cho thấy các mạch máu đã trở nên sạch sẽ và phục hồi mạnh mẽ như thời 20-25 tuổi. Các mao mạch nhỏ cũng được phục hồi. Kết quả là huyết áp của bạn sẽ ngừng tăng, hết đau đầu, mất ngủ, đầu óc minh mẫn hơn…Sau khi mạch máu được làm sạch, bạn sẽ thấy sức khỏe được cải thiện một cách toàn diện.
+            </p>
+
+            <p><b>Phục hồi các cơ quan nội tạng và khớp xương</b></p>
+
+            <p>
+                Mạch máu được làm sạch sẽ thúc đẩy quá trình phục hồi các cơ quan nội tạng trong cơ thể. Kết quả là các bệnh tật từng mắc trước đây sẽ biến mất mà không cần dùng thuốc. Tôi lấy ví dụ như nếu trước đây tuyến tụy và lá lách của bạn bị sưng viêm gây đau. Thì sau khi làm sạch mạch máu các chất độc tố là nguyên nhân gây bệnh sẽ được đẩy ra khỏi cơ thể từ đó sẽ giúp tuyến tụy và lá lách hết đau, hết sưng viêm. Ngoài ra, các khớp xương trước đây bị khô cứng cũng được phục hồi. Tiếng lạo xạo, lục cục sẽ biết mất. Sụn khớp được tái tạo tăng cường khả năng vận động linh hoạt hơn.
+            </p>
+
+            <p><b>Đánh tan mỡ thừa</b></p>
+
+            <p>
+                Bạn có biết thừa cân béo phì có liên quan chặt chẽ đến tình trạng mạch máu bị bẩn. Các mạch máu bị tắc nghẽn do cholesterol sẽ làm giảm lưu lượng máu đến các cơ quan trên cơ thể người. Khi đó não bộ sẽ truyền tín hiệu nhắc nhở chúng ta phải ăn. Lúc này sẽ khiến cơ thể dư thừa năng lượng chuyển qua tích tụ chất béo. Do đó, khi chúng ta làm sạch mạch máu khôi phục lại hoạt động tuần hoàn sẽ thúc đẩy nhanh quá trình phân hủy chất béo. Và theo nghiên cứu của chúng tôi thì trung bình một người sau khi làm sạch mạch máu mỗi tháng sẽ giảm được từ 2-5kg tùy cơ địa.
+            </p>
+
+            <p><b>Phục hồi thị lực và chống suy giảm trí nhớ</b></p>
+
+            <p>
+                Trong thành phần của <a href="#buynow" style="color: blue">Hypercare</a> có chứa giảo cổ lam giúp hạ mỡ máu giảm cholesterol toàn phần ngăn ngừa xơ vữa động mạch. Tăng cường lưu thông máu hỗ trợ điều trị đau đầu, hoa mắt, chóng mặt và chống suy giảm trí nhớ. Mắt bạn cũng trở nên tinh tường hơn bắt đầu có thể nhìn thấy xe bus từ xa và có thể xỏ được cả chỉ vào đầu kim bé tí.
+            </p>
+
+            <p><b>Tăng cường khả năng sinh lý cho nam giới</b></p>
+
+            <p>
+                Một trong những điều đáng ngạc nhiên khi sử dụng <a href="#buynow" style="color: blue">Hypercare</a> đó là tăng cường khả năng sinh lý cho nam giới. Mạch máu sau khi được làm sạch sẽ kích thích cơ thể sản sinh ra hormone nam testosterone. Kết quả là các bệnh viêm tuyến tiền liệt đều biến mất và u xơ tuyến tiền liệt cũng chậm phát triển. Nếu bạn còn dưới 70 tuổi thì khả năng sinh lý được cải thiện và hoàn toàn có thể quan hệ tình dục trở lại được.
+            </p>
+
+            <a href="#buynow">
+                <img src="assets/img/Hypercare-vn/content-5.jpg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a><br><br />
+
+            <p class="text-center">
+                <b>Hiệu ứng cánh bướm của <a href="#buynow" style="color: blue">Hypercare</a> với sức khỏe</b>
+            </p>
+
+            <p>
+                <a href="#buynow" style="color: blue">Hypercare</a> tác động đến cơ thể con người theo hiệu ứng cánh bướm. Tức là sản phẩm này sẽ gây ra một chuỗi những phản ứng tự chữa lành trên các cơ quan nội tạng trên cơ thể. Bạn sẽ thấy cơ thể cải thiện sức khỏe bắt đầu sự bình thường hóa của các mạch máu và kết thúc ở việc phục hồi thị lực và xương khớp. Sau 1-3 tháng làm sạch mạch máu, cơ thể bạn sẽ như được “tái sinh” thêm lần nữa. Đồng thời, bệnh nhân sẽ cảm thấy sức khỏe được cải thiện từng ngày.
+            </p>
+
+            <p class="text-center"><b>Thức dậy một cách dễ dàng</b></p>
+
+            <p>
+                Bạn sẽ thức dậy vào buổi sáng một cách dễ dàng. Bạn ra khỏi giường với tâm trạng thoải mái không cần phải gượng ép, chà xát đôi chân cứng đờ vào nhau để khớp xương mềm ra. Ngay từ sáng bạn đã cảm thấy tràn đầy năng lượng để bắt đầu ngày mới.
+            </p>
+
+            <p class="text-center"><b>Tâm trạng sảng khoái</b></p>
+
+            <p>
+                Bạn có một giấc ngủ ngon thức dậy tràn đầy năng lượng. Bạn sẽ thấy mình tâm trạng sảng khoái đầy hứng khởi.
+            </p>
+
+            <p class="text-center"><b>Thưởng thức cuộc sống</b></p>
+
+            <p>
+                Với tâm trạng hào hứng, menu bữa sáng của bạn cũng đa dạng hơn. Nếu như trước đây bạn sẽ phải khổ sở tuân theo chế độ ăn kiêng khắc nghiệt. Thì nay bạn muốn ăn gì cũng được không còn phải lo thừa cân, béo phì hay tăng huyết áp.
+            </p>
+
+            <p class="text-center"><b>Khả năng vận động được cải thiện</b></p>
+
+            <p>
+                Khi ra khỏi nhà, bạn sẽ không còn phải lo lắng về đôi chân của mình nữa. Bạn không còn gặp khó khăn khi đi bộ nữa. Bạn có thể đi bộ từ vài trăm mét đến cả km mà không còn đau mỏi chân. Các khớp xương không còn kêu lục khục, vận động mạnh vẫn trơn tru.
+            </p>
+
+            <p class="text-center"><b>Tập trung cao độ</b></p>
+
+            <p>
+                Khi có một giấc ngủ ngon, bạn sẽ cảm thấy thư thái và tập trung hơn khi bắt đầu ngày mới. Bạn sẽ không còn những cơn đau đầu triền miên làm cho đầu óc kém minh mẫn. Khả năng ghi nhớ được cải thiện, bạn sẽ có thể bắt đầu quay lại với những sở thích trước đây.
+            </p>
+
+            <p class="text-center"><b>Sự hồi phục kì diệu</b></p>
+
+            <p>
+                Bạn sẽ cảm nhận được cơ thể có sự phục hồi kỳ diệu. Ngay cả khi thị lực của bạn bị suy giảm nghiêm trọng cũng bắt đầu hồi phục dần dần. Nếu như trước đây bạn chỉ thấy mây mờ trước mắt thì bây giờ mọi thứ trở nên rõ ràng. Bạn có thể nhìn thấy cả số xe bus từ xa và chiêm ngưỡng được cả khung cảnh thiên nhiên tươi đẹp trước mắt.
+            </p>
+
+            <p>
+                Quan trọng nhất là: <b>BÂY GIỜ BẠN SẼ CÓ THỂ SỐNG KHỎE MÀ KHÔNG CẦN PHỤ THUỘC VÀO THUỐC.</b> Bạn sẽ quên đi cơn ác mộng phải uống thuốc hàng ngày, hàng tuần để huyết áp ổn định. Bạn cũng không phải tốn tiền cho các hiệu thuốc để duy trì cơ thể khỏe mạnh.
+            </p>
+
+            <p class="text-center" style="font-size:1.5em"><b>SỰ KHÁM HIẾM CỦA SẢN PHẨM VÀ ƯU ĐÃI CHO KHÁCH HÀNG</b></p>
+
+            <p><b>Phóng viên: Nhưng theo chúng tôi được biết thì hiện nay <a href="#buynow" style="color: blue">Hypercare</a> chưa được bán tại các hiệu thuốc? Và sản phẩm này dường như không có sẵn mà phải đăng ký mới đặt mua được? Vậy người dân Việt Nam làm thế nào để sở hữu được sản phẩm này?</b></p>
+
+            <p>
+                Đúng là như vậy! Thật không may vì từ đầu năm nay, <a href="#buynow" style="color: blue">Hypercare</a> đã không còn được bán tại các hiệu thuốc nữa. Nguyên nhân vì nhà sản xuất không thể đàm phán được với các hiệu thuốc. Bởi lẽ sản phẩm này có thể chữa khỏi hoàn toàn cho bệnh nhân cao huyết áp chỉ sau 1-2 liệu trình. Như vậy sẽ không còn những người mua thuốc hạ huyết áp nữa. Chính điều này sẽ dẫn đến tổn thất về mặt lợi nhuận rất nhiều. Chưa kể, chúng tôi được biết có sự can thiệp của các “thế lực ngầm” muốn ngăn chặn không cho phép <a href="#buynow" style="color: blue">Hypercare</a> bán rộng rãi ngoài thị trường. Chính vì thế mà <a href="#buynow" style="color: blue">Hypercare</a> chỉ được bán phổ biến ở nước ngoài và được một số phòng khám tư nhân mua lại về cung cấp nhỏ giọt cho bệnh nhân trong nước
+            </p>
+
+            <p>
+                Với mong muốn đưa <a href="#buynow" style="color: blue">Hypercare</a> đến gần hơn với người dân Việt Nam, tôi đã quyết định phân phối một phần lô sản phẩm với giá ưu đãi giảm 50% qua hình thức bán hàng trực tuyến. Vì số lượng có hạn nên chúng tôi sẽ chọn ra 100 người may mắn nhất để nhận ưu đãi này. Để đặt mua được <a href="#buynow" style="color: blue">Hypercare</a>, các bạn cần điền thông tin cá thông và số điện thoại vào bản đăng ký tôi để ở dưới bài viết này.
+            </p>
+
+            <p><b>Điều kiện để tham gia chương trình mua <a href="#buynow" style="color: blue">Hypercare</a> với giá ưu đãi:</b></p>
+
+            <p>
+                <ul>
+                    <li>Là công dân Việt Nam từ 18 tuổi trở lên.</li>
+                    <li>Đặt mua <a href="#buynow" style="color: blue">Hypercare</a> với MỤC ĐÍCH SỬ DỤNG CÁ NHÂN. Chúng tôi không bán <a href="#buynow" style="color: blue">Hypercare</a> cho các đại lý hay hiệu thuốc với mục đích kiếm tiền vô nhân đạo.</li>
+                </ul>
+            </p>
+
+            <p><i>Lưu ý: Bạn sẽ có hai lựa chọn để đăng ký đặt mua <a href="#buynow" style="color: blue">Hypercare</a> như sau:</i></p>
+
+            <p>
+                Để đặt hàng <a href="#buynow" style="color: blue">Hypercare</a> khuyến mãi. Bạn hãy điền vào đơn đăng ký dưới đây. Thông tin cá nhân và số điện thoại của bạn sẽ tự động được gửi đến các chuyên gia tư vấn của phòng khám. Họ sẽ liên hệ với bạn ngay trong vòng 5 phút sau khi để lại thông tin. Tôi đã để lại cho độc giả của tạp chí một mẫu đơn đăng ký liên kết trực tiếp với phòng khám của mình dưới đây.
+            </p>
+
+            <p class="text-center text-danger"><b>Đặc biệt, phòng khám hiện chỉ còn 5 hộp <a href="#buynow" style="color: blue">Hypercare</a> được bán theo chương trình ưu đãi. Chương trình sẽ kết thúc trước ngày 04.10.2023 nên các bạn cần phải nhanh tay đăng ký ngay.</b></p>
+        </div>
+
+        <div class="card mb-3" id="buynow">
+            <div class="card-body">
+                <div class="pt-4 pb-2">
+                    <img src="assets/img/Hypercare-vn/Hypercare-VN-Decor-02.png" class="rounded" alt="" style="width: 100%; margin-bottom: 10px;">
+                    <h1 class="text-center fw-bold">ĐƠN ĐĂNG KÝ CHÍNH THỨC</h1>
+                    <p class="text-center" style="color: blue">Số lượng đã đặt hàng: 29 957 trong tổng số 30.000 từ ngày 04.10.2023</p>
+
+                    <p>Nhận ưu đãi từ phòng khám tim mạch khi mua <a href="#buynow" style="color: blue">Hypercare</a></p>
+                    <h2 class="card-title text-center pb-0 fs-4 fw-light text-decoration-line-through">1.080.000 vnđ/hộp</h2>
+                    <h1 class="text-center fw-bold text-danger" style="margin: 20px 0">590.000 vnđ/hộp</h1>
+
+                    <p class="text-center small">
+                        <b class="text-danger">Ưu đãi 50%</b> sẽ kết thúc sau thời gian
+                    </p>
+                </div>
+
+                <div class="text-center" style="font-size: 3em; margin-bottom: 20px">
+                    <span class="badge bg-danger"><i class="bi bi-clock-fill"></i> <span id="timer">30 : 00</span></span>
+                </div>
+
+                <form id="form" class="row g-3 needs-validation" action="#" method="post">
+                    <div class="col-12">
+                        <label for="yourName" class="form-label">Họ tên <i class="bi bi-person"></i></label>
+                        <input type="text" id="txtName" name="txtName" class="form-control" required>
+                        <div class="invalid-feedback"><i style="font-size: 0.9em">Vui lòng nhập tên của bạn</i></div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="yourPhone" class="form-label">Số điện thoại <i class="bi bi-telephone"></i></label>
+                        <input type="text" id="txtPhone" name="txtPhone" class="form-control" required>
+                        <div class="invalid-feedback"><i style="font-size: 0.9em">Vui lòng nhập số điện thoại</i></div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-danger w-100" type="submit" name="submit"><i class="bi bi-cart-plus-fill"></i> ĐẶT MUA NGAY</button>
+                    </div>
+                </form>
+                <div class="text-center" style="margin-top: 20px;">Sản phẩm còn lại: <span class="badge bg-danger">12</span></div>
+            </div>
+            <P class="text-center" style="font-size: 0.8em">Thanh toán khi nhận hàng (COD) <br>Đơn hàng sẽ được ship <b>MIỄN PHÍ ĐẾN TẬN NHÀ</b></P>
+        </div>
+
+
+
+        <!-- Comments -->
+        <div class="container" style="--bs-gutter-x: 0rem !important">
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-7">
+                    <div class="card">
+
+                        <div class="p-3">
+
+                            <h5 class="text-success fw-light text-uppercase"><i class="bi bi-chat-dots-fill"></i> Bình luận</h5>
+
+                        </div>
+                        <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
+                            <img src="assets/img/no-avatar.jpg" width="50" class="rounded-circle mr-2" style="margin-right:10px">
+                            <form action=""></form>
+                            <input type="text" id="txtComment" class="form-control" placeholder="viết bình luận" style="margin-right:5px; height: 43px">
+                            <button type="submit" class="btn btn-secondary" id="btnSendMsg"><i class="ri-send-plane-fill"></i></button>
+                        </div>
+                        <div class="mt-2">
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Hà Thị Nga</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Cảm ơn bác sĩ rất nhiều. Ông đã chia sẻ cho những người cao tuổi chúng tôi một sản phẩm thực sự tuyệt vời. Bản thân tôi đã được điều trị bằng <a href="#buynow" style="color: blue">Hypercare</a> rất hiệu quả. Trước đây, tôi từng bị tăng huyết áp lên đến ngưỡng 200 mặc dù đã uống thuốc hạ huyết áp mà không hề giảm. Thế mà uống <a href="#buynow" style="color: blue">Hypercare</a> chỉ chưa đầy 2 tuần huyết áp đã ổn định về ngưỡng an toàn. Đau đầu, hoa mắt, chóng mặt cũng biến mất. Tôi ngủ ngon hơn. Sức khỏe cải thiện trông còn trẻ ra.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">204 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 5 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Lê Đắc Tâm</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Tôi vừa đăng ký mua 3 hộp <a href="#buynow" style="color: blue">Hypercare</a> với giá ưu đãi. Cô nhân viên tư vấn bảo 3 hôm nữa là nhận được hàng. Tôi thực sự rất mong được sử dụng sản phẩm. Năm nay tôi ngoài 60 đã mắc cao huyết áp gần 5 năm nay. Điều trị thuốc Tây mãi không khỏi. Nên tôi hy vọng <a href="#buynow" style="color: blue">Hypercare</a> sẽ giúp tôi thoát khỏi căn bệnh quái ác này.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">98 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 5 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Nguyễn Đăng Phúc</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        <a href="#buynow" style="color: blue">Hypercare</a> CHÍNH LÀ GIẢI PHÁP HIỆU QUẢ NHẤT CHO CÁC BỆNH NHÂN CAO HUYẾT ÁP. Bản thân tôi đây đã bị cao huyết áp gần 10 năm nay dùng đủ thứ thuốc Tây, Tàu, Nam, Bắc. Cứ ở đâu mách thuốc hay đều đi tìm về dùng. Tốn bao nhiêu tiền mà huyết áp cứ ngày một lên cao chứ không hề giảm. Đi khám bệnh viện thì bác sĩ chỉ cho dăm ba viên thuốc Tây lỗi thời. Uống vào không khỏi được bệnh còn bị tác dụng phụ tùm lum. May mắn năm ngoái tôi được gặp giáo sư Đào Thiện Hải. Chính ông đã khuyên tôi sử dụng <a href="#buynow" style="color: blue">Hypercare</a>. Thật tuyệt vời. Chỉ sau 5 ngày huyết áp đã về mức bình thường chỉ còn 110mmHg. Uống hết 1 liệu trình là 6 tháng căn bệnh suy giãn tĩnh mạch chi dưới của tôi cũng khỏi hoàn toàn. Cảm ơn <a href="#buynow" style="color: blue">Hypercare</a>.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">24 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Trần Trọng Vinh</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Tôi cũng dùng <a href="#buynow" style="color: blue">Hypercare</a> được 3 tháng nay. Không chỉ bệnh cao huyết áp được cải thiện mà thị lực của tôi được cải thiện rất nhiều. Mắt tôi trước đây đeo kính lão mới có thể nhìn rõ. Thế mà từ khi uống <a href="#buynow" style="color: blue">Hypercare</a> mắt tôi ngày càng sáng ra không cần kính vẫn xỏ kim và xem tivi hàng ngày. Tôi đã giới thiệu <a href="#buynow" style="color: blue">Hypercare</a> cho tất cả những người cao tuổi trong khu sử dụng.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">22 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 8 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Lan Anh</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Chắc cháu là bệnh nhân trẻ tuổi nhất ở đây đã từng được bác Hải cứu sống. Năm nay cháu mới 18 tuổi nhưng đã bị cao huyết áp được gần 3 năm đi kèm là máu nhiễm mỡ, gan nhiễm mỡ. Bệnh tật khiến cháu sa sút sức khỏe yếu rớt như sên. Năm ngoái cháu suýt chết vì nhồi máu não bệnh viện đã trả về mà bố mẹ cháu thương con mang đến phòng khám của bác Hải. Khi đến cháu đã mất ý thức rồi nhưng bác Hải rất nhanh chóng cho cháu uống ngay 2 viên <a href="#buynow" style="color: blue">Hypercare</a> chưa đầy 2 tiếng sau đầu óc đã tỉnh táo. Đến chiều bác sĩ cho cháu về nhà dặn uống đều đặn mỗi ngày chỉ cần uống 2-4 viên là tình trạng sẽ cải thiện. Và đúng như vậy, cháu uống được 2 tháng là huyết áp đã ổn định. Tình trạng mỡ máu và gan nhiễm mỡ đã biến mất. Đặc biệt, cân nặng của cháu cũng giảm nhiều từ 87kg đã xuống chỉ còn 57kg sau nửa năm duy trì uống <a href="#buynow" style="color: blue">Hypercare</a>.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">2 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 10 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Hoàng Đức</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Liệu có phải lừa đảo không? Thuốc gì mà lại bán trôi nổi thế này?
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">2 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 10 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Trần Văn Bằng</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Ông chả biết cái gì cả! Đã đọc kỹ bài viết chưa mà nói thế. Do nền y tế Việt Nam thối nát không cho sản phẩm được bán ngoài thị trường nên mới phải bán online như thế.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">18 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 1 ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Ngọc Hoa</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Đúng rùi! Cái bọn bán thuốc thì chỉ nghĩ đến lợi nhuận. Chứ chúng nó bao giờ quan tâm đến sức khỏe, tính mạng của dân đâu. Nên nó không bán <a href="#buynow" style="color: blue">Hypercare</a> đấy. Bọn chó chết!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">1 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2 ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Phương Anh</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Mình cũng dùng <a href="#buynow" style="color: blue">Hypercare</a> này rồi. Hiệu quả thật đấy. Mình thì không bị cao huyết áp nhưng lại hay bị đau đầu với chóng mặt. Đọc thấy nguyên nhân do mạch máu bị ách tắc nên mình cũng mua <a href="#buynow" style="color: blue">Hypercare</a> để dùng. Mới được 2 ngày mà đã hết sạch đau đầu, chóng mặt. Ngủ ngon giấc hơn nên ngày càng trẻ đẹp ra.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">10 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2 ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Lê Minh Hoàng</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Tôi là một bác sĩ làm trong ngành Y hơn 10 năm nay. Tôi phải khẳng định rằng <a href="#buynow" style="color: blue">Hypercare</a> là sản phẩm tốt nhất cho bệnh nhân cao huyết áp hiện nay ở Việt Nam. Sản phẩm này được chiết xuất từ thảo dược thiên nhiên an toàn và lành tính. Ngoài hiệu quả ổn định huyết áp, <a href="#buynow" style="color: blue">Hypercare</a> còn giúp giảm mỡ máu, ngăn chặn xơ vữa động mạch và chống đột quỵ rất tốt. Tôi đều khuyên bệnh nhân của mình sử dụng <a href="#buynow" style="color: blue">Hypercare</a> thay vì dùng thuốc Tây kéo dài.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">5 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2 ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Anh Quân</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Không chỉ riêng <a href="#buynow" style="color: blue">Hypercare</a> đâu. Tôi biết rất nhiều loại thuốc hiện đang bị cấm bán tại Việt Nam. Tất cả chỉ vì các sản phẩm này quá hiệu quả. Người bệnh chỉ cần dùng 1 liệu trình là khỏi hoàn toàn. Trong khi đó nếu sử dụng các loại thuốc thông dụng kia thì người bệnh phải uống triền miên ngày tháng mới đỡ. Đó chính là mỏ vàng của đám dược sĩ. Vì thế chúng nó tìm mọi cách để ngăn những loại thuốc như <a href="#buynow" style="color: blue">Hypercare</a> không được xuất hiện trên thị trường.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">5 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 3 ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End comments -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright fw-light" style="margin-left: 10px; margin-right: 10px;">
+            &copy; Copyright Báo 24H Trụ sở: Tầng 12, Tòa nhà Geleximco, 36 Hoàng Cầu, Phường Ô Chợ Dừa, Quận Đống Đa, TP Hà
+            Nội. Tel: (84-24) 73 00 24 24 hoặc (84-24) 3512 1806 - Fax: (84-24) 3512 1804. Chi nhánh: Tầng 7, Tòa nhà Việt Úc,
+            402 Nguyễn Thị Minh Khai, Phường 5, Quận 3, TP. Hồ Chí Minh. Tel: (84-28) 7300 2424 / Giấy phép số 332/GP – TT ĐT
+            ngày cấp 22/01/2018 SỞ THÔNG TIN VÀ TRUYỀN THÔNG HÀ NỘI. Chịu trách nhiệm quản lý nội dung: Phan Minh Tâm.
+            HOTLINE: 0965 08 24 24
+        </div>
+    </footer><!-- End Footer -->
+
+    <script>
+        var date = new Date();
+        var thu = date.getDay();
+        var ngay = date.getDate();
+        var thang = date.getMonth() + 1;
+        var nam = date.getFullYear();
+        var output;
+        switch (thu) {
+            case 0:
+                output = "Chủ nhật";
+                break;
+            case 1:
+                output = "Thứ hai";
+                break;
+            case 2:
+                output = "Thứ ba";
+                break;
+            case 3:
+                output = "Thứ tư";
+                break;
+            case 4:
+                output = "Thứ năm";
+                break;
+            case 5:
+                output = "Thứ sáu";
+                break;
+            case 6:
+                output = "Thứ bảy";
+                break;
+            default:
+                output = "Hôm nay";
+                break;
+        }
+
+        document.getElementById("today").innerHTML = output + " • " + ngay + "/" + thang + "/" + nam;
+
+        // Countdown timer
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes,
+                seconds;
+
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + " : " + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            //var duration = 10 * 60; // 10 minutes in seconds
+            var duration = 30 * 60; // 30 minutes in seconds
+            var display = document.getElementById("timer");
+            startTimer(duration, display);
+        };
+
+    </script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
