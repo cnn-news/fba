@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Phân biệt sự thật và ngộ nhận, con đường thoát khỏi căn bệnh tiểu đường!</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/comment.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#form").submit(function (event) {
+                event.preventDefault();
+
+                var name = $("input[name='txtName']").val();
+                var phone = $("input[name='txtPhone']").val();
+
+                var postData = {
+                    firstname: name,
+                    phone: phone
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=220438f60bfa3728e2ba82cdca62706e3ea42015&goal_id=10",
+                    data: postData,
+                    success: function (response) {
+                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        window.location.href = link;
+                    },
+                    error: function (xhr, status, error) {
+                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        window.location.href = link;
+                    }
+                });
+            });
+
+            $("#btnSendMsg").click(function () {
+                SendComment();
+            });
+        });
+
+        function SendComment() {
+            $("#txtComment").val("");
+            alert('Bình luận thành công! Chúng tôi sẽ xét duyệt trước khi hiển thị. Xin cảm ơn!');
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '805812500946580');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=805812500946580&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center bg-success">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <i class="bi bi-list toggle-sidebar-btn text-white"></i>
+
+        </div><!-- End Logo -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center" style="margin-right: 20px;">
+                <li class="nav-item" style="margin-right: 10px;">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <h1 class="text-white fw-light text-uppercase" style="font-size: 2.3em; margin-top: 10px;">sức khỏe</h1>
+                    </a>
+
+                </li><!-- End Profile Nav -->
+                <li class="nav-item">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/logo.png" alt="Profile" class="rounded">
+                    </a>
+
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav text-uppercase" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">Trang chủ</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">Bóng đá</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">Kinh doanh</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">Sức khỏe</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">hi-tech</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">thế giới</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">thể thao</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">giải trí</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">phái đẹp</span>
+                </a>
+            </li>
+        </ul>
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+        <div class="row">
+            <div class="col">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#buynow" class="text-success">Trang chủ</a></li>
+                        <li class="breadcrumb-item">Sức khỏe</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="col text-end" style="color: #899bbd; font-size: 14px;">
+                <i class="bi bi-calendar-week"></i> <span id="today"></span></a>
+            </div>
+        </div>
+
+        <div class="pagetitle">
+            <h1 class="text-success">Những ngộ nhận phổ biến về bệnh tiểu đường đang làm giảm tuổi thọ của người dân Việt.</h1>
+        </div><!-- End Page Title -->
+
+        <div style="clear: both;"></div>
+
+        <div class="content">
+            <p>
+                Bác sĩ Lê Hùng - bác sĩ bệnh viện chuyên khoa nội tiết. Tất cả những người nổi tiếng mắc bệnh tiểu đường đều cố gắng sắp xếp lịch để được ông thăm khám. Bệnh nhân từ Thái Lan, Singapore và các nước khác đều tìm đến ông. Ông là một trong những bác sĩ nội tiết quan trọng nhất tại Đông Nam Á, đồng thời cũng là tác giá của 32 cuốn sách và 3 bài báo về chủ đề khoa học được đăng trên các tạp chí.
+            </p>
+
+            <a href="#buynow">
+                <img src="assets/img/glucoactive-vn/295cb65f-d6ee-466a-a9c5-3c40303d9002.webp" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a><br><br />
+            <p>
+                Tiến sĩ Lê Hùng hiếm khi trả lời phỏng vấn, tuy nhiên, ông đã đồng ý trả lời các câu hỏi từ nhà báo của chúng tôi. Dưới đây, bạn sẽ tìm thấy thông tin hữu ích giúp bạn chiến đấu với bệnh tiểu đường.
+            </p>
+
+            <p>
+                Tiến sĩ Lê Hùng ĐẢM BẢO với chúng tôi rằng lượng đường trong máu <b>CÓ THỂ ĐƯỢC KIỂM SOÁT THÀNH CÔNG THÔNG QUA NHỮNG KIẾN THỨC HIỆN ĐẠI!</b>
+            </p>
+
+            <p>
+                Các chủ đề được đề cập trong bài viết này:
+                <ul>
+                    <li>Yếu tố quan trọng nhất trong việc duy trì lượng đường huyết là gì?</li>
+                    <li>Tại sao 95% bệnh nhân tiểu đường không thể duy trì việc kiểm soát đường huyết?</li>
+                    <li>Những trường hợp nào có thể cho phép lượng đường huyết ổn định hoàn toàn?</li>
+                    <li>ĐÂU LÀ NHỮNG PHƯƠNG PHÁP KIỂM SOÁT LƯỢNG ĐƯỜNG HUYẾT HIỆN ĐẠI?</li>
+                </ul>
+            </p>
+
+            <p class="text-center" style="font-size:1.5em"><b>Các bác sĩ lo lắng, các nhà thuốc cung cấp dịch vụ cho bệnh nhân</b></p>
+
+            <p><b>Tiến sĩ Lê Hùng:</b></p>
+
+            <p>
+                Ngày nay, hầu hết các phương pháp kiểm soát lượng đường trong máu đều dựa trên các sản phẩm có chứa metformin. Tuy nhiên, đây là sự ngộ nhận của những bệnh nhân và bác sĩ thiếu hiểu biết. Metformin dẫn đến bệnh tật và tử vong sớm. Tiến triển phục hồi không khả quan. Nếu bạn tham khảo ý kiến bác sĩ về bệnh tiểu đường tuýp 2 và họ kê đơn điều trị dựa trên các sản phẩm này, đừng bao giờ tìm đến họ lần thứ hai.
+            </p>
+
+            <p>
+                Tất cả các sản phẩm này làm cho insulin đạt đến mức khiên cưỡng, khiến máu trở nên đặc như sữa đặc. Nồng độ insulin cao có thể gây hại nghiêm trọng cho cơ thể bạn với khả năng tàn phá gan, thận và các cơ quan khác theo đúng nghĩa đen. Về độ đậm đặc và tác động thì insulin sánh ngang với axit dịch vị. Hãy tưởng tượng điều gì sẽ xảy ra nếu tất cả các cơ quan của bạn chứa đầy axit dịch vị. Độc tố này sẽ đốt cháy mọi cơ quan!
+            </p>
+
+            <p>
+                Nồng độ insulin cao sẽ phá hủy các tế bào, kích thích sự phân chia bất thường của chúng và gây bệnh ung thư. Theo thống kê, đây là nguyên nhân khiến 28% bệnh nhân tiểu đường được chẩn đoán mắc UNG THƯ.
+            </p>
+
+            <p>
+                Ngoài ra, các mạch máu nhanh chóng bị tắc nghẽn với cholesterol do nồng độ insulin cao: máu đặc không lưu thông tốt như bình thường. Do đó, các mạch máu chứa đầy cholesterol và cuối cùng dẫn đến huyết áp cao hơn nữa. 98% bệnh nhân tiểu đường bị cao huyết áp. Nhiều người cũng có thể mắc một loạt các vấn đề tim mạch khác.
+            </p>
+
+            <p>
+                <b>Danh sách các biến chứng nguy hiểm của việc sử dụng metformin:</b>
+                <ul>
+                    <li>Rối loạn tiêu hóa (thường gặp nhất là tiêu chảy, ợ chua, chướng bụng, loét dạ dày).</li>
+                    <li>Huyết áp cao (đặc biệt là vào ban đêm), đau đầu, ù tai.</li>
+                    <li>Xơ gan – gan hợp nhất với các mô liên kết và ngừng hoạt động lọc máu, khiến độc tố lan truyền khắp cơ thể.</li>
+                    <li>Sỏi thận do thiếu muối và đường trầm trọng.</li>
+                    <li>Ung thư.</li>
+                    <li>Tử vong sớm do nội tạng bị phá hủy.</li>
+                    <li>Mù lòa.</li>
+                </ul>
+            </p>
+
+            <p>
+                Tất nhiên, diễn tiến của bệnh phụ thuộc vào liều lượng và thời gian điều trị, cũng như cơ địa của bạn. Ngoài ra, BẠN KHÔNG THỂ ĐIỀU TRỊ NHỮNG BỆNH NÀY TRIỆT ĐỂ!
+            </p>
+
+            <p><b>Nếu metformin là độc dược, tại sao lại sử dụng sản phẩm này?</b></p>
+
+            <p><b>Tiến sĩ Lê Hùng:</b></p>
+
+            <p>
+                Có một sự thất đáng tiếc là, ngày nay, rất ít bác sĩ quan tâm đến sức khoẻ của bệnh nhân. Họ chỉ làm việc vì mục đích kiếm tiền chứ không quan tâm xem bạn có phục hồi hay không. Đó là lý do tại sao họ kê đơn những loại thuốc mang lại lợi nhuận mà không cần suy nghĩ nhiều. Kê các sản phẩm thuốc có metformin chắc chắn mang lại rất nhiều lợi nhuận. Và tất nhiên, họ sẽ nói rằng những biến chứng từ thuốc sẽ không kéo dài.
+            </p>
+
+            <p>
+                Sự vô cảm không mang lại điều tốt đẹp! Theo lệ thường, bệnh nhân không biết đến biến chứng do những sản phẩm này gây ra và bác sĩ không xem xét đến việc thông báo những biến chứng này cho bệnh nhân.
+            </p>
+
+            <p>
+                Cố dùng hoá chất độc hại để kiểm soát lượng đường trong máu là một điều sai trái! Bệnh nhân tiểu đường tuýp 2 vẫn có hy vọng khỏi bệnh! Điều quan trọng là điều trị đúng cách.
+            </p>
+
+            <p>
+                Bệnh nhân đã dùng metformin nhiều năm thường tìm đến tôi. Những bệnh nhân này rất ốm yếu, tiều tụy, họ già đi sớm hơn so với bình thường.
+            </p>
+
+            <p>
+                Câu chuyện này rất phổ biến. Theo lệ thường, các bệnh nhân tình cờ được chẩn đoán mắc tiểu đường tuýp 2. Họ đều thấy khoẻ mạnh và thậm chí còn không nghĩ rằng lượng đường trong máu của bản thân ở mức cao. Tuy nhiên, sau đó, họ nhận được đơn thuốc với liều metformin cao.
+            </p>
+
+            <p>
+                Metformin giúp làm giảm lượng đường trong máu nhưng lại khiến tình trạng càng ngày càng xấu đi. Bệnh nhân phàn nàn về cơn mệt mỏi mãn tính, béo phì, huyết áp cao và đau đầu. Chân họ bắt đầu sưng lên. Gương mặt của họ cũng phù nề vào buổi sáng. Họ phải chịu những cơn ù tai, tê ngón chân, lạnh chân lạnh tay còn thị lực và trí nhớ thì ngày càng suy giảm.
+            </p>
+
+            <p>
+                Bác sĩ nói rằng nguyên nhân là bệnh tiểu đường. Thế nhưng nguyên nhân thật sự là insulin! Hay nói chính xác hơn, nguyên nhân là metformin, chất làm tăng việc sản sinh hóc-môn đến mức bất thường!
+            </p>
+
+            <p>
+                ĐỪNG NGHĨ RẰNG BẠN KHÔNG NÊN ĐIỀU TRỊ BỆNH TIỂU ĐƯỜNG. Nếu bạn phải quyết định giữa việc điều trị tiểu đường bằng metformin hoặc không điều trị, hãy chọn phương án thứ nhất. Nếu không được điều trị, tốc độ gây tử vong của bệnh tiểu đường tuýp 2 sẽ càng nhanh. Điểm khác biệt duy nhất chính là triệu chứng.
+            </p>
+
+            <a href="#buynow">
+                <img src="assets/img/Glucoactive-vn/content-2.jpg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+            <div class="text-center" style="font-size: 0.8em">
+                <i>Nội tạng của người mắc bệnh tiểu đường trông như mứt anh đào. Gan, dạ dày, thận, tim và – vấn đề nghiêm trọng nhất – mạch máu…</i>
+            </div><br>
+
+            <p><b>Các mạch máu và nội tạng bị tắc nghẽn.</b></p>
+
+            <p>
+                Hãy tưởng tượng về mứt anh đào hoặc mâm xôi. Nếu bạn bị bệnh tiểu đường, các mạch máu của bạn sẽ trông y như mứt. Thành mạch máu sẽ bị đường lấp đầy và cứng lại. Kết quả là mạch máu sẽ trở nên hẹp hơn và mất khả năng giãn nở. Những mạch máu nhỏ sẽ chịu tác động đầu tiên sau đó đến cách mạch máu cỡ trung và cỡ lớn. Mạch máu có chức năng nuôi dưỡng nội tạng nhưng việc lưu thông máu giảm sẽ gây ra các bệnh mãn tính.
+            </p>
+
+            <p><b>Cách bệnh tiểu đường phá huỷ cơ thể bạn từ trong ra ngoài:</b></p>
+
+            <p>
+                <b>Mất thị lực: </b>
+            </p>
+
+            <p>Bệnh tiểu đường làm mất thị lực. Bạn sẽ bị mù vĩnh viễn. Ngay cả phẫu thuật laze cũng sẽ không thể phục hồi lại được thị lực đã bị tổn thương do bệnh tiểu đường vì xuất huyết đã làm bong võng mạc.</p>
+
+            <p><b>Mất khả năng vận động khớp</b></p>
+            <p>Chất lỏng hoạt dịch đảm bảo khả năng vận động của khớp. Khi mạch máu dừng nuôi dưỡng các khớp, chất lỏng hoạt dịch cũng sẽ không được sản sinh. Khớp sẽ bị khô và không còn liên kết. Bệnh nhân sẽ không thể chịu được những cơn đau theo đó, ngay cả thuốc giảm đau cũng không có tác dụng. Các khớp cứng lại hoàn toàn và bệnh nhân mất khả năng tự do đi lại.</p>
+
+            <p><b>Hệ thống thần kinh ngừng hoạt động</b></p>
+            <p>Như những nội tạng khác, lượng đường trong máu cao cũng làm tổn thương hệ thống thần kinh. Qua thời gian, bệnh tiểu đường gây ra các rối loạn thần kinh và bệnh nhân trở nên mất cân bằng cảm xúc. Bệnh nhân sẽ thường xuyên thấy trầm cảm và không thể thấy yêu thích bất kỳ điều gì nữa. Họ chỉ muốn chết.</p>
+
+            <p><b>Da bắt đầu phân hủy!</b></p>
+            <p>Mới đầu, làn da trở nên khô và nẻ, sau đó bệnh nhân sẽ bị chàm và cuối cùng là ung thư. Bởi vì làn da bị phân hủy nên cơ và xương cũng chịu chung số phận. Cơ thể sẽ phát ra mùi hôi thối. Dần dần, bệnh nhân sẽ bị hoại thư.</p>
+            <p>Tiểu đường là một căn bệnh rất nguy hiểm. Tôi dám nói rằng đó là căn bệnh nguy hiểm nhất. Tôi thấy tiếc cho những người đã được chẩn đoán mắc bệnh tiểu đường. Tôi cố gắng giúp họ nhưng kết quả đều phụ thuộc vào họ.</p>
+
+            <p><b>Ông có thể làm gì để kiểm soát lượng đường trong máu ngoài việc dùng metformin? Hãy tưởng tượng một người đã về hưu và phải đấu tranh với căn bệnh tiểu đường suốt nhiều năm. Lượng đường trong máu của ông ấy liên tục tăng cao. Giả sử bệnh nhân này đang dùng metformin thường xuyên và cảm thấy không khoẻ. Vậy ông có thể làm gì để sửa chữa điều này? Liệu lượng đường trong máu còn có thể được kiểm soát không?</b></p>
+
+            <p><b>Tiến sĩ Lê Hùng:</b></p>
+
+            <p>Tôi nhắc lại, bệnh tiểu đường tuýp 2 là một căn bệnh phức tạp, nguy hiểm trên toàn thân. Căn bệnh này hoàn toàn khác so với cảm cúm hay tiêu chảy. Tiểu đường tuýp 2 tệ hơn rất nhiều. Căn bệnh này lan ra khắp cơ thể nên bạn cần phải tuân theo một hướng tiếp cận tổng thể. CHỈ TĂNG NỒNG ĐỘ INSULINE SẼ GÂY HẠI CHO SỨC KHOẺ VÀ KHÔNG ĐỦ ĐỂ GIẢI QUYẾT VẤN ĐỀ.</p>
+
+            <p>Bạn nên dùng các phương pháp tổ hợp để kiểm soát lượng đường trong máu và chỉ nên dùng loại sản phẩm vừa giúp hạ đường huyết vừa an toàn cho cơ thể.</p>
+
+            <p>Nếu bạn hỏi tôi loại sản phẩm nào có thể giúp tự kiểm soát và duy trì lượng đường trong máu, tôi khuyến nghị bạn thử sản phẩm <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a> do Trung tâm Nội tiết Anh phát triển năm 2020. Sản phẩm này không chứa các chất hoá học như metformin. Nó là một HỢP CHẤT TỰ NHIÊN ĐỂ CHỐNG LẠI BỆNH TIỂU ĐƯỜNG VỚI HƠN 60 (!) HOẠT CHẤT.</p>
+
+            <p>Công thức của sản phẩm bao gồm vitamin, các chất dinh dưỡng đa lượng và vi lượng cần thiết khi mắc tiểu đường tuýp 2. <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a> bao gồm 28 loại chiết xuất thảo mộc từ khắp nơi trên thế giới.</p>
+
+            <p>
+                Lý do khiến <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a> được đánh giá tốt là vì sản phẩm này an toàn cho cơ thể bạn. Thêm vào đó, nó còn giúp cơ thể mạnh khỏe hơn. Mấu chốt chính là sản phẩm này có tác dụng tốt theo mọi mặt cho căn bệnh của bạn.
+            </p>
+
+            <p>
+                Hiệu quả của <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a> không hề gây thất vọng! Sau khi chúng tôi bắt đầu giới thiệu sản phẩm này đến bệnh nhân, tỉ lệ hồi phục sức khoẻ… ý tôi là HOÀN TOÀN VƯỢT QUA BIẾN ĐỘNG LƯỢNG ĐƯỜNG HUYẾT… tăng 96%. Có nghĩa là 96 trên 100 người hoàn toàn khỏi bệnh. Cơ thể họ không còn đường và họ cảm thấy khoẻ mạnh.
+            </p>
+
+            <p><b>Bức thư chân thành nhất về việc điều trị bệnh tiểu đường</b></p>
+
+            <p>Tôi muốn cho các bạn xem lá thư của bà Nguyễn Thu Trang, một người hưu trí ở Hà Nội. Bà Trang không được điều trị tại phòng khám của chúng tôi (bà ấy không thể đến do vấn đề sức khoẻ). Tôi đã gọi điện cho bà ấy và đề xuất dùng thử <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a>.</p>
+
+            <p>Và tình trạng của bà ấy đã có tiến triển đáng kể.</p>
+
+            <a href="#buynow">
+                <img src="assets/img/Glucoactive-vn/17e19c53-3abc-45a9-9391-a32fd9e46467.webp" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+            <div class="text-center" style="font-size: 0.8em">
+                <i>Bà Nguyễn Thu Hà, một người hưu trí 67 tuổi hiện đang sống ở Đà Nẵng đang phải chống chọi với bệnh tiểu đường.</i>
+            </div><br>
+
+            <p>"Tại sao những bác sĩ khác lại giấu sản phẩm tuyệt vời này – <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a> – khỏi bệnh nhân? Bệnh tiểu đường của tôi đang rất tồi tệ. Tôi mắc bệnh khi tôi 28 tuổi. Khi tôi 49 tuổi, tôi đã gặp phải những biến chứng nặng nề (bệnh về mắt và thận). Tôi có thể ngửi thấy mùi aceton... Con gái tôi không thể ngồi cạnh tôi. Ngón chân tôi biến đen và bàn chân thì hoại tử. Tôi đang chết dần chết mòn theo đúng nghĩa đen. Bác sĩ nói tôi còn rất ít thời gian.</p>
+
+            <p>
+                Tôi bắt đầu nghĩ về những ngày cuối cùng của đời mình. Tôi nghĩ rằng tôi đã sống một cuộc sống tuyệt vời nhưng tôi chưa muốn chết. Ngay cả khi tôi nói tôi muốn chết, tôi nói thế là do suy nhược thần kinh. Tôi biết bệnh tiểu đường có thể kiểm soát được nhưng tôi không tin – mọi người đều nói bạn không thể làm gì được và đi khám cũng vô dụng. Đó là lý do vì sao tôi không đi. Sau đó tôi thấy ông trên tivi và quyết định gọi điện cho ông.
+            </p>
+
+            <p>
+                Xin cảm ơn ông đã cho tôi lời khuyên và gửi <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a> cho tôi. Tôi đã sử dụng ngay lập tức. Sau bốn tháng, tôi vẫn sống. Và tôi sẽ tiếp tục sống thêm nhiều năm nữa vì bác sĩ nói lượng đường trong máu của tôi đã có cải thiện. Suốt 10 năm qua, chưa bao giờ tôi cảm thấy bản thân thoát khỏi được bệnh tiểu đường và khoẻ mạnh như lúc này! Tôi ngủ tốt, tôi không còn khát nước liên tục, không còn cảm thấy lúc nào cũng muốn đi vệ sinh, không còn thấy lúc nào cũng mệt mỏi. Huyết áp của tôi không tăng và thị lực của tôi đã tốt hơn. Tôi tiếp tục kiểm soát được lượng đường trong máu và tôi chắc chắn là bản thân sẽ sống thêm được nhiều năm. Xin cảm ơn rất nhiều vì <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a>."
+            </p>
+
+            <p><b>Xin cho chúng tôi biết trị liệu <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a> kéo dài trong bao lâu.</b></p>
+
+            <p><b>Tiến sĩ Lê Hùng:</b></p>
+
+            <p><b>Thành thật mà nói, việc trị liệu sẽ mất thời gian nhưng hoàn toàn xứng đáng. Việc trị liệu có thể mất vài tháng, trong một số trường hợp – có lẽ mất đến nửa năm.</b></p>
+
+            <p>
+                Bạn hãy chuẩn bị sẵn tinh thần là để đạt được kết quả mong muốn thì phải mất thời gian. Nhưng việc trị liệu với sản phẩm này sẽ giúp bạn loại bỏ các triệu chứng khiến bạn khổ sở và sống một cuộc sống bình thường khoẻ mạnh như trước khi mắc bệnh tiểu đường.
+            </p>
+
+            <p>
+                Đến <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a> giúp tất cả mọi người, đặc biệt là người già có hệ miễn dịch kém.
+            </p>
+
+            <p>
+                Hãy để tôi mô tả các giai đoạn phục hồi.
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Phục hồi mạch máu</b></p>
+
+            <p>
+                Kết quả chính nhờ <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a> không chỉ loại bỏ đường mà còn cân bằng lại định lượng glucose. Nhờ có bạch quả trong công thức, sản phẩm này còn giúp hoà tan lượng đường đã xâm nhập vào thành mạch máu. Kết quả là mạch máu được chữa trị và trở nên linh hoạt. Hiện tại mạch máu đã có thể co giãn. <a href="#buynow" style="color: blue"><a href="#buynow" style="color: blue">Glucoactive</a></a> cũng giúp thông, làm sạch mạch máu và tái tạo mao mạch nhỏ. Đó là lý do tại sao bạn không còn bị huyết áp cao, bạn sẽ quên tình trạng mệt mỏi, thẫn thờ và tận hưởng tốc độ lành vết thương nhanh hơn. Bạn sẽ có nhiều năng lượng hơn. Nhiều người thường nhanh chóng lấy lại mong muốn làm việc nhà hoặc làm vườn.
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Cân bằng định lượng glucose</b></p>
+
+            <p>
+                <a href="#buynow" style="color: blue">Glucoactive</a> không làm nồng độ insulin tăng cao đó là lý do khiến sản phẩm này an toàn. Tuy nhiên nó còn có một hiệu quả cực kỳ có lợi khác – làm giảm tình trạng kháng insulin. Thật tuyệt vời. Các thành phần hoạt tính sinh học của sản phẩm xâm nhập vào tận trong tế bào cơ, chất béo, gan và gây kích thích để những cơ quan này phản ứng tích cực hơn với hóc-môn trong máu. Ngành y khoa gọi quá trình này là "sự hình thành tế bào thứ cấp". Kết quả là tế bào bắt đầu tiêu thụ glucose hoạt tính và tăng trưởng theo thời gian. Phương thức tiêu thụ glucose này là phương thức an toàn nhất với cơ thể.
+            </p>
+
+            <p>
+                Bệnh nhân bắt đầu cảm thấy khoẻ và lúc nào cũng tràn đầy năng lượng, kể cả sau khi ăn. Không khát nước. Không có tình trạng phù nề hay khô da. Không bị ngứa vùng sinh dục. Không đi tiểu thường xuyên.
+            </p>
+
+            <p>
+                Về các đặc điểm vật lý, bạn sẽ thấy nồng độ glycated hemoglobin cũng như lượng đường trong nước tiểu và nồng độ aceton giảm.
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Nhanh chóng đốt cháy mỡ thừa!</b></p>
+
+            <p>
+                Tình trạng béo phì làm bệnh tiểu đường tệ đi thêm 4-5 lần. Đó là lý do tại sao một trong những hiệu quả của <a href="#buynow" style="color: blue">Glucoactive</a> là giảm cân. Có hai lý do cho việc giảm cân: thứ nhất, do tế bào bắt đầu chủ động tiêu thụ và chuyển hoá đường thành năng lượng. Thứ hai, hợp chất bao gồm chiết xuất Bạch tật lê đậm đặc. Đây là một chiết xuất tự nhiên có khả năng đốt mỡ mạnh mẽ.
+            </p>
+
+            <p>
+                Giảm 10 kg giúp giảm 80% rủi ro biến chứng của bệnh tiểu đường.
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Tăng cường sinh lý</b></p>
+
+            <p>
+                Rất nhiều bệnh nhân tiểu đường bị yếu sinh lý. Một trong những hiệu quả thú vị của <a href="#buynow" style="color: blue">Glucoactive</a> là cân bằng lượng testosterone và trả lại khả năng sinh lý khoẻ mạnh. Kể cả đàn ông tầm 50-60 tuổi cũng có thể hoạt động tình dục.
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Cải thiện da, cơ và xương.</b></p>
+
+            <p>
+                <a href="#buynow" style="color: blue">Glucoactive</a> giúp phục hồi làn da bị tổn thương và làm lành vết thương hoại tử, làn da sẽ ngừng phân huỷ và khô. Xương cũng được cải thiện nhờ việc phục hồi cấu trúc tự nhiên và không còn yếu ớt nữa. Tất cả các mô đều được làm mới, trả lại tính đàn hồi cho cơ bắp.
+            </p>
+
+            <p>
+                <a href="#buynow">
+                    <img src="assets/img/Glucoactive-vn/6fb0818b-dea1-45ab-9d2b-6209bdb72d57.png" class="rounded" alt=""
+                         style="width: 100%; margin-bottom: 10px;">
+                </a>
+                <div class="text-center" style="font-size: 0.8em">
+                    <i>Hiệu ứng cánh bướm cho mỗi bệnh nhân tiểu đường!</i>
+                </div><br>
+            </p>
+
+            <p>
+                Hiệu quả của <a href="#buynow" style="color: blue">Glucoactive</a> tương tự như hiệu ứng cánh bướm, tạo ra một phản ứng dây chuyền giúp phục hồi hoạt động của các cơ quan nội tạng và tăng cường sức khoẻ toàn diện. Quá trình bắt đầu bằng việc giúp cho mạch máu hoạt động bình thường trở lại và kết thúc bằng việc phục hồi thị lực và khớp.
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Dễ dàng tỉnh giấc</b></p>
+
+            <p>
+                Dễ dàng tỉnh giấc và rời giường vào buổi sáng – bạn không phải duỗi người hay xoa bóp đôi chân, cột sống và phần cổ tê rần của mình. Một buổi sáng tràn đầy năng lượng.
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Tâm trạng vui vẻ và sức khoẻ toàn diện</b></p>
+
+            <p>
+                Vào buổi sáng và trong suốt cả ngày. Hãy ngủ đủ, hãy ngủ đủ. Bạn sẽ thấy mình trẻ ra. Bạn sẽ không phải đi vệ sinh đêm. Không đau đớn, không mùi hôi thối.
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Bữa sáng thơm ngon</b></p>
+
+            <p>
+                Bạn sẽ bổ sung rất nhiều thực phẩm vào chế độ ăn uống của mình và không còn cần phải ăn kiêng nghiêm ngặt. Bạn sẽ được nếm những món ăn trong mơ của mình. Không còn chế độ ăn uống nghiêm ngặt với hàm lượng hyđat-cacbon thấp. Hãy tận thưởng những món ăn yêu thích của bạn!
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Sức lực khác thường</b></p>
+
+            <p>
+                Bạn sẽ không phải lo lắng cho đôi chân của mình cho dù có đi bất kỳ đâu đi nữa – đi bộ sẽ không còn là một trải nghiệm khó chịu. Bạn sẽ có thể đi bộ cả ngày mà không hề mỏi chân. Giày và tất của bạn sẽ không còn để lại những vết lằn trên đôi chân phù nề to như xúc xích của bạn.
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Im lặng tuyệt đối</b></p>
+
+            <p>
+                Bạn sẽ thấy thư giãn và bình tĩnh. Không còn những cơn đau dai dẳng quấy rầy và ngăn bạn tập trung làm việc gì khác. Khi không còn thấy đau đớn, bạn sẽ đột nhiên bắt đầu nhận ra những sự vật và sự việc, âm thanh và mùi vị thường ngày mà bạn đã lãng quên.
+            </p>
+
+            <p class="text-center" style="font-size: 1.5em"><b>Thị lực tuyệt vời</b></p>
+
+            <p>
+                Thị lực của bạn sẽ bắt đầu phục hồi cho dù đã bị suy yếu nghiêm trọng. Bạn sẽ thấy rõ tất cả những gì trước đây không thể thấy rõ: số xe buýt từ xa và tận hưởng cảnh đẹp thiên nhiên.
+            </p>
+
+            <p>
+                Quan trọng hơn, khôi phục thị lực sẽ giúp tăng tuổi thọ cho bạn! Ngay cả người lớn tuổi cũng thấy khoẻ mạnh và tràn đầy năng lượng. Bạn sẽ không cần người thân đến chăm sóc và sẽ có khả năng tự làm mọi việc.
+            </p>
+
+            <p><b>Thiếu hụt sản phẩm <a href="#buynow" style="color: blue">Glucoactive</a> tại các nhà thuốc ở Việt Nam!</b></p>
+
+            <a href="#buynow">
+                <img src="assets/img/Glucoactive-vn/0a7e7983-86ee-4c1f-8921-0c8ce6a0f03f.png" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+            <div class="text-center" style="font-size: 0.8em">
+                <i>Tiểu đường tự dứt! Không cần tiêm hay thuốc đắt tiền!</i>
+            </div><br>
+
+            <p><b>Theo như tôi biết, mọi người đều gặp khó khăn khi mua <a href="#buynow" style="color: blue">Glucoactive</a> tại Việt Nam ở thời điểm hiện tại, sản phẩm này rất khó tìm. Điều này có thật không? Ông có lời khuyên nào cho bệnh nhân tiểu đường ở Việt Nam?</b></p>
+
+            <p>
+                Đúng, <a href="#buynow" style="color: blue">Glucoactive</a> rất khó tìm. Số lượng lô <a href="#buynow" style="color: blue">Glucoactive</a> luôn có giới hạn nên sản phẩm này không có sẵn tại các hiệu thuốc. Thật không may, hầu hết các lô được mua từ các cơ sở chăm sóc sức khoẻ tư nhân.
+            </p>
+
+            <p>
+                Tuy nhiên tôi có tin tốt cho độc giả của bạn: tôi đã trao đổi với đồng nghiệp và quyết định bán cho độc giả của bạn <a href="#buynow" style="color: blue">Glucoactive</a> với mức giá thấp nhất. Chúng tôi sẽ gửi sản phẩm qua đường bưu điện trực tiếp tới nhà của bệnh nhân. Chúng tôi có thể gửi sản phẩm tới bất kỳ vùng nào ở Việt Nam.
+            </p>
+
+            <p>
+                Sau đây là điều kiện để nhận <a href="#buynow" style="color: blue">Glucoactive</a>.
+            </p>
+
+            <p>
+                Điều kiện tiên quyết:
+                <ol>
+                    <li>Bạn phải sinh sống tại Việt Nam. Chúng tôi sẽ không vận chuyển <a href="#buynow" style="color: blue">Glucoactive</a> ra nước ngoài.</li>
+                    <li>Bạn có thể dùng <a href="#buynow" style="color: blue">Glucoactive</a> CHO RIÊNG MÌNH. Chúng tôi kêu gọi các đại lý không bán lại <a href="#buynow" style="color: blue">Glucoactive</a> với giá cao. Kiếm tiền từ bệnh nhân là hành vi tồi tệ! <a href="#buynow" style="color: blue">Glucoactive</a> sẽ chỉ được gửi cho một người. Người này nhận lượng sản phẩm cần thiết để chữa khỏi bệnh cho một người (hoặc nhiều hơn nếu trong gia đình có nhiều người mắc bệnh tiểu đường).</li>
+                </ol>
+            </p>
+
+            <p>
+                Để tham gia vào chương trình của chúng tôi, hãy nhấn nút "Quay" trên vòng quay với những mức chiết khấu ở bên dưới. Vòng quay dừng lại ở mức chiết khấu nào thì bạn có thể mua <a href="#buynow" style="color: blue">Glucoactive</a> ở mức chiết khấu đó. Bạn chỉ có thể quay vòng quay một lần.
+            </p>
+
+            <p><b>Hãy nắm bắt cơ hội trước người khác!</b></p>
+
+            <p>
+                Thật tiếc là chúng tôi không có đủ sản phẩm cho tất cả bệnh nhân tiểu đường ở Việt Nam. Đó là lý do tại sao chúng tôi quyết định cung cấp cho tất cả những người nhanh tay đặt hàng tại đây. Nếu bạn muốn duy trì việc kiểm soát lượng đường huyết với sự hỗ trợ của hợp chất đặc biệt này, chúng tôi khuyên bạn nên đặt hàng càng sớm càng tốt khi vẫn còn hàng.
+            </p>
+
+            <p class="text-center">
+                <b>
+                    Hãy thận trọng! <a href="#buynow" style="color: blue">Glucoactive</a> hết hàng rất nhanh!
+                    Số lượng hàng hiện có đang giảm rất nhanh!
+                </b>
+            </p>
+        </div>
+
+        <div class="card mb-3" id="buynow">
+            <div class="card-body">
+                <div class="pt-4 pb-2">
+                    <img src="assets/img/glucoactive-vn/hinh glucoactive.png" class="rounded" alt="" style="width: 100%; margin-bottom: 10px;">
+                    <h1 class="text-center fw-bold">GIÁ ƯU ĐÃI</h1>
+                    <h2 class="card-title text-center pb-0 fs-4 fw-light text-decoration-line-through">1.080.000 vnđ/hộp</h2>
+                    <h1 class="text-center fw-bold text-danger" style="margin: 20px 0">590.000 vnđ/hộp</h1>
+
+                    <p class="text-center small">
+                        <b class="text-danger">Ưu đãi 50%</b> sẽ kết thúc sau thời gian
+                    </p>
+                </div>
+
+                <div class="text-center" style="font-size: 3em; margin-bottom: 20px">
+                    <span class="badge bg-danger"><i class="bi bi-clock-fill"></i> <span id="timer">30 : 00</span></span>
+                </div>
+
+                <form id="form" class="row g-3 needs-validation" action="#" method="post">
+                    <div class="col-12">
+                        <label for="yourName" class="form-label">Họ tên <i class="bi bi-person"></i></label>
+                        <input type="text" id="txtName" name="txtName" class="form-control" required>
+                        <div class="invalid-feedback"><i style="font-size: 0.9em">Vui lòng nhập tên của bạn</i></div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="yourPhone" class="form-label">Số điện thoại <i class="bi bi-telephone"></i></label>
+                        <input type="text" id="txtPhone" name="txtPhone" class="form-control" required>
+                        <div class="invalid-feedback"><i style="font-size: 0.9em">Vui lòng nhập số điện thoại</i></div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-danger w-100" type="submit" name="submit"><i class="bi bi-cart-plus-fill"></i> ĐẶT MUA NGAY</button>
+                    </div>
+                </form>
+                <div class="text-center" style="margin-top: 20px;">Sản phẩm còn lại: <span class="badge bg-danger">12</span></div>
+            </div>
+            <P class="text-center" style="font-size: 0.8em">Giảm 10% với các giao dịch thanh toán qua chuyển khoản. <br>Đơn hàng sẽ được ship MIỄN PHÍ ĐẾN TẬN NHÀ theo đúng yêu cầu của bạn đồng thời đảm bảo tiêu chuẩn phòng chống dịch.</P>
+        </div>
+
+
+
+        <!-- Comments -->
+        <div class="container" style="--bs-gutter-x: 0rem !important">
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-7">
+                    <div class="card">
+
+                        <div class="p-3">
+
+                            <h5 class="text-success fw-light text-uppercase"><i class="bi bi-chat-dots-fill"></i> Bình luận</h5>
+
+                        </div>
+                        <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
+                            <img src="assets/img/no-avatar.jpg" width="50" class="rounded-circle mr-2" style="margin-right:10px">
+                            <form action=""></form>
+                            <input type="text" id="txtComment" class="form-control" placeholder="viết bình luận" style="margin-right:5px; height: 43px">
+                            <button type="submit" class="btn btn-secondary" id="btnSendMsg"><i class="ri-send-plane-fill"></i></button>
+                        </div>
+                        <div class="mt-2">
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar1.webp" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Ngọc Ánh</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Cảm ơn, bạn thật tử tế! Tôi đã thử mua <a href="#buynow" style="color: blue">Glucoactive</a> ở một văn phòng bác sĩ khác và được báo giá cao gấp 10 lần nên đã từ chối mua sản phẩm này. Bạn tôi đã gửi link bài viết này cho tôi, tôi đã đặt hàng và nhận được sản phẩm rồi (giao hàng rất nhanh). Tôi đã dùng sản phẩm này một thời gian và thu được kết quả tốt!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">204 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 5 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Huy Dương</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Tôi đồng ý với mọi lời bác sĩ nói! Metformin có hại, nó đầu độc mọi người và giúp bác sĩ kiếm tiền! Tôi đã dùng nó trong bảy năm mà chẳng có kết quả, lượng đường huyết của tôi tiếp tục tăng. Mọi thứ đang trở nên tệ đi… Nhưng sau đó tôi tìm thấy <a href="#buynow" style="color: blue">Glucoactive</a> và mọi thứ hoàn toàn khác biệt. Khác với các hóa chất độc hại, sản phẩm tự nhiên này thực sự giúp cải thiện sức khỏe tổng thể. Tôi khuyên mọi người nên sử dụng <a href="#buynow" style="color: blue">Glucoactive</a>.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">98 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 5 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar3.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Thúy Minh</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Thúy Minh 30.09.2023
+                                        Bạn biết đấy, tôi cũng bị tiểu đường, cho đến khi tôi nghe nói về <a href="#buynow" style="color: blue">Glucoactive</a>. Tôi như một bà già, huyết áp cao và lượng đường huyết liên tục tăng (200-230), thêm nữa là cân nặng quá khổ 120 kg (tôi không cao). Tôi ra mồ hôi nhiều và bị siêu viêm, nay đã khỏi. Tôi đã sử dụng <a href="#buynow" style="color: blue">Glucoactive</a>. Vào lúc này, tôi cảm thấy tràn đầy sức sống. Tôi đã giảm cân, huyết áp không còn cao nữa. Nói chung, tôi vô cùng hài lòng với kết quả.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">24 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Hoàng Duy</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Sản phẩm này rất lý tưởng để giảm lượng đường trong máu. Lượng đường huyết của tôi đã giảm từ 14 mmol/L xuống 7,9 trong một tháng!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">22 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 8 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Anh Quân</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Cảm ơn bạn, tôi đã đặt hàng rồi. Một nhân viên tư vấn đã gọi và nói với tôi rằng còn khoảng 19 sản phẩm, nhưng ngày càng có nhiều người đặt hàng, ngày càng nhiều người bắt đầu nhận ra rằng họ thực sự có cơ hội và <a href="#buynow" style="color: blue">Glucoactive</a> sẽ sớm hết hàng.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">2 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 10 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Quang Minh</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Bệnh tật là nỗi đau cho một số người nhưng cũng là công việc kinh doanh cho những người khác. Các hiệu thuốc đã cho thấy bản chất của họ trong một thời gian dài – tất cả những gì họ muốn là kiếm tiền từ sức khỏe của chúng ta!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">2 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 10 giờ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar11.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Linh Chi</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Tôi mắc bệnh tiểu đường và bị tăng cân. Tôi hiện đang điều trị bằng <a href="#buynow" style="color: blue">Glucoactive</a> để ngăn bệnh tái phát và muốn giới thiệu sản phẩm này cho tất cả những ai chưa dùng thử!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">18 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 1 ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar15.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Ngọc Bích</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        <a href="#buynow" style="color: blue">Glucoactive</a> ĐÃ BÁN HẾT !!!!!!!! Tôi đã không thể đặt mua sản phẩm này. Họ nói rằng hôm qua có hàng nhưng hôm nay đã hết rồi. Tôi không biết phải làm gì. <a href="#buynow" style="color: blue">Glucoactive</a> là niềm hy vọng của tôi. Tôi có thể tìm sản phẩm này ở đâu?
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">1 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2 ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar16.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Trang Lê</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        <a href="#buynow" style="color: blue">Glucoactive</a> ĐÃ BÁN HẾT !!!!!!!! Tôi đã không thể đặt mua sản phẩm này. Họ nói rằng hôm qua có hàng nhưng hôm nay đã hết rồi. Tôi không biết phải làm gì. <a href="#buynow" style="color: blue">Glucoactive</a> là niềm hy vọng của tôi. Tôi có thể tìm sản phẩm này ở đâu?
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">10 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2 ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar18.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Phương Anh</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Chào mọi người! Tôi 59 tuổi. Ban đầu, cân nặng của tôi là 124 kg và hiện tại tôi 80 kg. Chiều cao của tôi là 1 mét 68. Lượng đường huyết hiện là 5,0 nhưng trước đó từng là 29. Tôi đã dùng <a href="#buynow" style="color: blue">Glucoactive</a> được 3 tháng và vô cùng hài lòng với kết quả. Không có sản phẩm nào khác giúp ích được nhiều như thế.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">5 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2 ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar20.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Nguyễn Yến Nhi</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Bạn sẽ tiếp tục bán sản phẩm này chứ? Khi nào vậy? Tôi cũng muốn đặt mua!!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">5 lượt thích</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 3 ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End comments -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright fw-light" style="margin-left: 10px; margin-right: 10px;">
+            &copy; Copyright Báo 24H Trụ sở: Tầng 12, Tòa nhà Geleximco, 36 Hoàng Cầu, Phường Ô Chợ Dừa, Quận Đống Đa, TP Hà
+            Nội. Tel: (84-24) 73 00 24 24 hoặc (84-24) 3512 1806 - Fax: (84-24) 3512 1804. Chi nhánh: Tầng 7, Tòa nhà Việt Úc,
+            402 Nguyễn Thị Minh Khai, Phường 5, Quận 3, TP. Hồ Chí Minh. Tel: (84-28) 7300 2424 / Giấy phép số 332/GP – TT ĐT
+            ngày cấp 22/01/2018 SỞ THÔNG TIN VÀ TRUYỀN THÔNG HÀ NỘI. Chịu trách nhiệm quản lý nội dung: Phan Minh Tâm.
+            HOTLINE: 0965 08 24 24
+        </div>
+    </footer><!-- End Footer -->
+
+    <script>
+        var date = new Date();
+        var thu = date.getDay();
+        var ngay = date.getDate();
+        var thang = date.getMonth() + 1;
+        var nam = date.getFullYear();
+        var output;
+        switch (thu) {
+            case 0:
+                output = "Chủ nhật";
+                break;
+            case 1:
+                output = "Thứ hai";
+                break;
+            case 2:
+                output = "Thứ ba";
+                break;
+            case 3:
+                output = "Thứ tư";
+                break;
+            case 4:
+                output = "Thứ năm";
+                break;
+            case 5:
+                output = "Thứ sáu";
+                break;
+            case 6:
+                output = "Thứ bảy";
+                break;
+            default:
+                output = "Hôm nay";
+                break;
+        }
+
+        document.getElementById("today").innerHTML = output + " • " + ngay + "/" + thang + "/" + nam;
+
+        // Countdown timer
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes,
+                seconds;
+
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + " : " + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            //var duration = 10 * 60; // 10 minutes in seconds
+            var duration = 30 * 60; // 30 minutes in seconds
+            var display = document.getElementById("timer");
+            startTimer(duration, display);
+        };
+
+    </script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
