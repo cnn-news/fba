@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>BERITA TERKINI</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/comment.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#form").submit(function (event) {
+                event.preventDefault();
+
+                var name = $("input[name='txtName']").val();
+                var phone = $("input[name='txtPhone']").val();
+
+                var postData = {
+                    firstname: name,
+                    phone: phone
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=220438f60bfa3728e2ba82cdca62706e3ea42015&goal_id=373",
+                    data: postData,
+                    success: function (response) {
+                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        window.location.href = link;
+                    },
+                    error: function (xhr, status, error) {
+                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        window.location.href = link;
+                    }
+                });
+            });
+
+            $("#btnSendMsg").click(function () {
+                SendComment();
+            });
+        });
+
+        function SendComment() {
+            $("#txtComment").val("");
+            alert('Komentar berhasil! Kami akan meninjau sebelum menampilkannya. Terima kasih!');
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2050991191901273');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=2050991191901273&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center bg-success">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <i class="bi bi-list toggle-sidebar-btn text-white"></i>
+
+        </div><!-- End Logo -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center" style="margin-right: 20px;">
+                <li class="nav-item" style="margin-right: 10px;">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <h1 class="text-white fw-light text-uppercase" style="font-size: 2.3em; margin-top: 10px;">SEHAT</h1>
+                    </a>
+
+                </li><!-- End Profile Nav -->
+                <li class="nav-item">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/logo.png" alt="Profile" class="rounded">
+                    </a>
+
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav text-uppercase" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">BERANDA</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">POLITIK</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">SOSIAL</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">EKONIMI</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">DUNIA</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">PERISITIWA</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">OLAHRAGA</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">BUDAYA</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#buynow">
+                    <i class="bi bi-grid text-success"></i>
+                    <span class="text-success">AGAMA</span>
+                </a>
+            </li>
+        </ul>
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+        <div class="row">
+            <div class="col">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#buynow" class="text-success">BERANDA</a></li>
+                        <li class="breadcrumb-item">SEHAT</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="col text-end" style="color: #899bbd; font-size: 14px;">
+                <i class="bi bi-calendar-week"></i> <span id="today"></span>
+            </div>
+        </div>
+
+        <div class="pagetitle">
+            <h1 class="text-success">"Hampir semua prosedur pengobatan mata di rumah sakit lebih mementingkan uang dibandingkan kesehatan pasien." Kasus Rumah Sakit Khusus Mata Ternama Menjadi Viral!</h1>
+        </div><!-- End Page Title -->
+
+        <div style="clear: both;"></div>
+
+        <div class="content">
+
+            <P><B>Bandung, 13/11/2023 Kasus yang tengah terjadi di salah satu rumah sakit khusus mata ternama menjadi viral! Pihak rumah sakit diduga tidak sepenuhnya melaksanakan prosedur terapi atau operasi dengan semestinya, sehingga membuat pasien tidak sembuh sepenuhnya. Terlebih lagi, pasien telah menghabiskan banyak uang untuk pengobatannya.</B></P>
+
+            <p>Berita tersebut telah tersebar di media sosial pada awal tahun ini, dan pihak rumah sakit tidak tinggal diam. Pihak rumah sakit bertindak cepat agar reputasi rumah sakit tersebut tidak menjadi semakin buruk. Para dokter spesialis mata dan para petinggi rumah sakit tersebut telah merilis sebuah surat terbuka kepada para netizen agar dapat memaafkan kesalahan oknum orang dalam yang telah menyalahgunakan posisi dan kekuasaan mereka untuk berbuat serakah dan menipu pasien.</p>
+
+            <p>Para dokter spesialis mata tersebut mengatakan bahwa rumah sakit tidak memberikan izin untuk merekomendasikan pasien menggunakan obat baru yang sangat ampuh dalam membantu pasien mengatasi masalah pada mata mereka. Penelitian menunjukkan bahwa obat <b>baru ini dapat membantu mengobati masalah mata dalam 87% kasus tanpa harus melakukan operasi.</b> Karena itu, rumah sakit tidak mengeluarkan izin karena bisa menurunkan keuntungan yang mereka dapatkan.</p>
+
+            <p>Tak hanya itu, Kepala Bagian Dokter Spesialis Mata, Dr. Andi Hartanto, menyatakan disela-sela wawancaranya dengan para reporter bahwa, "Manajemen rumah sakit tersebut telah berubah semenjak awal pandemi, terlebih manajemen pernah mengatakan bahwasanya jika pihak rumah sakit tidak mendapatkan pemasukan, maka rumah sakit ini bisa bangkrut. Akan tetapi itu tidak betul adanya, karena rumah sakit telah mendapatkan bantuan dana dari donatur dan sumber lainnya, sehingga alasan tersebut tidak valid. Jadi mungkin kalian dapat menyimpulkannya sendiri apa yang sebenarnya terjadi."</p>
+
+            <a href="#buynow">
+                <img src="https://w.ladicdn.com/s750x600/5da6cb07a973800e7e31908d/doc_1-20221010104231-mcxpa.png" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+
+            <div class="text-center" style="font-size: 0.8em">
+                <i>Rumah sakit mata sekarang ini berjalan hanya untuk mendapatkan keuntungan saja, visi dan misi mereka sudah tidak sejalan dengan yang sebelumnya kami anut, yaitu melayani pasien dengan sepenuh hati." Ungkap Dr. Andi Hartanto</i>
+            </div><br>
+
+            <p>Banyak dokter yang memang sengaja mengarahkan pasien untuk melakukan operasi ataupun terapi bertahap yang tidak hanya dilakukan sekali, melainkan berkali-kali. Terlebih lagi, sejak 2 tahun silam, biaya operasi dan terapi bertahap meningkat pesat sedangkan kebutuhan pasien juga meningkat. Pasien pun terpaksa untuk mengikuti segala arahan dokter agar dapat menyembuhkan penyakitnya, dan mereka harus rela mengeluarkan banyak uang untuk itu.</p>
+
+            <p>Faktanya, saat ini telah <b>ada metode pengobatan atau terapi yang lebih efektif dari operasi. Akan tetapi pihak manajemen rumah sakit telah membungkam informasi tersebut agar tidak bocor ke ranah publik.</b> Metode tersebut telah terbukti dan teruji klinis, sehingga aman untuk digunakan siapa saja. Obat ini tidak hanya tersedia di Indonesia, tetapi juga di negara-negara Eropa, di mana obat ini sudah lama populer.</p>
+
+            <p>Seperti yang saya telah sampaikan sebelumnya, operasi mata sudah tidak dianjurkan lagi untuk pengobatan mata, mengapa? Karena saat ini telah ada metode khusus yang dapat mengatasi permasalahan mata tanpa operasi, tanpa mengganggu aktivitas sehari-hari, dan tanpa efek samping. Pada lebih dari 89% kasus kerusakan mata, 4-5 tahun setelah melakukan operasi mata, akan kembali mengalami kerusakan yang serupa sehingga pasien harus kembali melakukan perawatan di rumah sakit. Di sisi lain, <b>obat baru tersebut dapat memulihkan penglihatan secara alami dan permanen, memulihkan sel-sel di mata dan organ sekitarnya.</b></p>
+
+            <p>Obat untuk memulihkan penglihatan kabur dan kebutaan total ini ditemukan oleh seorang dokter mata yang sangat berbakat - Dr. Ahmad.</p>
+
+            <p>Dr. Ahmad mulai mengerjakan proyek ini beberapa tahun yang lalu. Semuanya dimulai ketika istrinya menginjak usia 50 tahun dan kondisi penglihatannya semakin memburuk. Dr. Ahmad bertekad untuk menyelamatkannya dari kebutaan.</p>
+
+            <p>Dengan mengembangkan formula obat yang ia buat, <b>Dr. Ahmad berhasil membantu istrinya dan banyak orang lain yang memiliki penglihatan yang buruk.</b></p>
+
+            <a href="#buynow">
+                <img src="https://w.ladicdn.com/s700x600/5da6cb07a973800e7e31908d/doc_2-20221010104231-bnddt.jpg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+            <div class="text-center" style="font-size: 0.8em">
+                <i>Dr. Ahmad: Saya menciptakan formula ini untuk menyelamatkan istri saya dari kebutaan</i>
+            </div><br>
+
+            <p>Dalam laporan hari ini kita akan berbincang dengan Dr. Ahmad dan menggali lebih dalam bagaimana obat ajaibnya dapat membantu memulihkan penglihatan yang buruk.</p>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden:</b> Dr Ahmad, apakah benar Anda membuat formula obat ini karena ingin membantu istri Anda?
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> Benar sekali. Penglihatan adalah salah satu indra yang paling berharga. Untuk dapat melihat berbagai peristiwa, pemandangan alam, atau aktivitas yang sedang terjadi, penglihatan adalah hal yang sangat berharga untuk manusia di dunia.</p>
+
+                <p><b>"Mata kita adalah jendela jiwa, dan ketika kita kehilangan indra tersebut, kita kehilangan bagian penting dari hidup kita."</b></p>
+
+                <p>Sekarang, masalah penglihatan muncul secara perlahan, seperti yang terjadi pada kasus istri saya. Kehilangan penglihatan akan membuat Anda frustasi. Cara terbaik untuk menjaga kesehatan mata adalah melakukan pemeriksaan mata ke dokter mata, memahami gejalanya secepat mungkin, dan melakukan metode pemulihan yang tepat untuk mencegah kebutaan.</p>
+
+                <p>Namun, terkadang, itu pun tidak membantu. Istri saya telah mencoba hampir semua cara yang bisa dia lakukan, tetapi tetap tidak berhasil.</p>
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="50" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden:</b> Jadi karena itulah Anda memutuskan untuk turun tangan langsung?
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> Betul sekali. Saya menyaksikan sendiri bagaimana penderitaan istri saya. Dia tak hanya harus menyuntik matanya (coba bayangkan betapa sakitnya itu!), namun selain itu dia juga harus minum obat-obatan yang membuatnya pusing dan lemas. Sayangnya, tidak satupun dari cara tersebut yang berhasil.</p>
+
+                <p><b>Semua dokter mengatakan penyakit tersebut tidak dapat disembuhkan.</b> Tapi saya berkata pada diri saya sendiri, "Hei, kamu ini juga dokter mata yang memiliki pengetahuan mendalam tentang mata, seharusnya kamu juga berusaha untuk mencari cara untuk membantu istrimu sendiri". Dan dengan tekad itulah saya mulai mengerjakan projek tersebut.</p>
+
+                <p>"Tekad saya sangat bulat untuk menyelamatkan istri saya dan saya berhasil!"</p>
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="50" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden:</b> Tolong ceritakan secara lebih detail apa saja yang telah Anda lakukan.
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> Pertama, saya harus mempelajari struktur mata dan mempelajari apa penyebab utama kebutaan dengan lebih mendalam. Saya sudah melakukan banyak penelitian tentang penurunan kemampuan penglihatan yang diakibatkan usia dan tanda-tanda masalah kesehatan mata.</p>
+
+                <p><b>Dan saya meneliti bagaimana penurunan kemampuan penglihatan ini mempengaruhi kemampuan fokus mata dan kerusakan pada penglihatan.Saya hanya ingin memahami penyebab istri saya mulai buta pada usia 50 tahun.</b></p>
+
+                <a href="#buynow">
+                    <img src="https://w.ladicdn.com/s650x550/5da6cb07a973800e7e31908d/doc_3-20221010104231-il6eq.jpg" class="rounded" alt=""
+                         style="width: 100%; margin-bottom: 10px;">
+                </a>
+                <div class="text-center" style="font-size: 0.8em">
+                    <i>Foto: Konferensi yang menyelamatkan nasib istri Dr. Ahmad dan banyak tunanetra lainnya</i>
+                </div><br>
+
+
+                <p>Saya juga mulai menghadiri banyak konferensi yang berbeda, berdiskusi dengan berbagai dokter mata, profesor, dan ahli bedah mata terkenal untuk mencari solusinya. Di salah satu konferensi ini, <b>saya bertemu dengan seorang dokter mata muda yang memberikan pidato menarik tentang pemulihan alami untuk memulihkan kebutaan.</b> Saya tidak menyangka betapa beruntungnya saya!</p>
+
+                <p>Akhirnya saya menemukan jawaban yang saya cari-cari! Setelah pidatonya selesai, saya harus mengantri dengan banyak jurnalis dan dokter lain, untuk menggali lebih dalam tentang solusinya itu.</p>
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden:</b> Dan Anda mulai mengerjakan formula Anda? Bisakah Anda menceritakan kepada kami lebih lanjut tentang itu?
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> Tahukah Anda bahwa menurut beberapa penelitian terbaru, 90% masalah penglihatan terjadi karena aliran darah yang terhambat ke retina mata? Akibatnya, lensa dan kornea mata gagal menerima zat-zat yang diperlukan dalam jumlah yang dibutuhkan. Dan itu berujung pada semakin memburuknya penglihatan kita.</p>
+
+                <a href="#buynow">
+                    <img src="https://w.ladicdn.com/s600x500/5da6cb07a973800e7e31908d/eye_1-20221011021633-h6uif.jpg" class="rounded" alt=""
+                         style="width: 100%; margin-bottom: 10px;">
+                </a>
+                <div class="text-center" style="font-size: 0.8em">
+                    <i>Foto: Konferensi yang menyelamatkan nasib istri Dr. Ahmad dan banyak tunanetra lainnya</i>
+                </div><br>
+
+                <p><b>Ide dokter muda ini berdasar pada peningkatan suplai darah ke berbagai organ penglihatan manusia.</b></p>
+
+                <p><b>Ini akan menurunkan risiko kebutaan tidak hanya pada tahap awal penyakit, tetapi juga pada tahap lanjut, ketika pasien hampir buta.</b></p>
+
+                <p>Itulah mengapa saya mulai bekerja sama dengan Pusat Penelitian Oftalmologi Indonesia dalam mengembangkan formula ini. Dan bagi saya itu adalah pengalaman yang sangat luar biasa.</p>
+
+                <p>Dan buah dari penelitian tersebut, saya berhasil membuat obat yang dinamakan <b><a href="#buynow">Eyecaps</a></b>.</p>
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="50" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden:</b> Penyakit apa saja yang dapat disembuhkan oleh obat Anda?
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> <b><a href="#buynow">Eyecaps</a> dipercaya sebagai formula revolusioner yang dapat mengoptimalkan kinerja mata kita dengan bantuan bahan-bahan alami.</b> Bahan-bahan tersebut telah diekstraksi dan dikombinasikan secara kompleks hingga menjadi formula yang sangat efektif untuk menjaga kesehatan mata, meningkatkan ketajaman penglihatan, memperkuat retina, memperkuat otot mata, dan melancarkan sirkulasi darah pada mata sehingga jaringan pada mata mendapatkan nutrisi yang cukup.</p>
+                <p>
+                    <b>Vaccinium myrtillus fructus (Ekstrak Blueberry Eropa)</b>
+                    <ul>
+                        <li>Melindungi retina dari berbagai pengaruh luar</li>
+                        <li>Melindungi mata dan menjaga penglihatan</li>
+                        <li>Meningkatkan mikrosirkulasi dan menjaga fungsi retina</li>
+                        <li>Membantu mendukung kesehatan mata dengan antioksidan, anti inflamasi, penstabil kolagen, pelindung pembuluh darah.</li>
+                        <li>Membantu meningkatkan penglihatan dan memperkuat pembuluh darah di belakang mata</li>
+                        <li>Mengandung vitamin A yang bisa meningkatkan kesehatan mukosa dan kornea mata</li>
+                    </ul>
+
+                    <b>Andrographis paniculata herba (Ekstrak Sambiloto)</b>
+                    <ul>
+                        <li>Menurunkan kadar glukosa darah yang bisa mencegah terjadinya retinopati diabetik.</li>
+                        <li>Menurunkan aktivitas pembentukan glukosa dari senyawa-senyawa non karbohidrat seperti piruvat dan laktat.</li>
+                        <li>Merangsang daya fagositosis sel darah putih sehingga meningkatkan kekebalan tubuh.</li>
+                    </ul>
+
+                    <b>Formula <a href="#buynow">Eyecaps</a> memiliki efek memulihkan daya penglihatan yang mulai hilang dan bisa sepenuhnya menyembuhkan berbagai penyakit yang biasa muncul pada mata manusia:</b>
+
+                    <ul>
+                        <li>Rabun jauh</li>
+                        <li>Kerusakan saraf mata</li>
+                        <li>Katarak</li>
+                        <li>Peradangan pada saraf mata</li>
+                        <li>Neuritis saraf mata</li>
+                        <li>Peradangan uveitis</li>
+                        <li>Chorioretinitis</li>
+                        <li>Ablasi retina</li>
+                        <li>Kekeruhan kornea</li>
+                        <li>Peradangan kelopak mata</li>
+                        <li>Konjungtivitis</li>
+                        <li>Kerusakan pada retina (retinitis pigmentosa)</li>
+                        <li>Peradangan pada kornea (keratitis)</li>
+                    </ul>
+
+                    Dan lebih banyak lagi penyakit mata yang belum saya sebutkan.
+                </p>
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden:</b> Maaf jika saya terdengar terlalu skeptis, tetapi apakah formula Anda benar-benar bisa memulihkan penglihatan pasien tanpa operasi, untuk orang yang hampir mengalami kebutaan, terutama jika dia sudah berusia di atas 50 tahun?
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> <b>Merupakan fakta ilmiah bahwa semua sistem tubuh kita mampu memulihkan dirinya sendiri.</b> Kita hanya perlu membantu sedikit dengan meredakan pembengkakan, meningkatkan suplai darah, dan mempercepat pembuangan sel-sel mati dan racun.</p>
+                <p>
+                    <b>Karena itu, dengan obat yang tepat, banyak proses di dalam tubuh yang bisa dibalikkan, termasuk untuk memulihkan penglihatan kita.</b>
+                </p>
+
+                <p>Pada tahun 2021, <b><a href="#buynow">Eyecaps</a></b> telah melakukan uji coba klinis di Pusat Penelitian Penyakit Mata Indonesia dengan total sukarelawan sebanyak 2576 orang yang mengikuti proses tersebut. Saat ini, fase uji klinis tersebut telah selesai dan tidak ada kontraindikasi yang ditemukan, sehingga semua orang dapat menggunakan obat ini!</p>
+
+                <p>
+                    <a href="#buynow">
+                        <img src="assets/img/Eyecap-id/dashboard.png" class="rounded" alt=""
+                             style="width: 100%; margin-bottom: 10px;">
+                    </a>
+                </p>
+
+                <p>Penglihatan <b>istri saya adalah bukti terbaik untuk menjawab pertanyaan Anda!Saya dulu juga skeptis, tetapi ketika istri saya mendapatkan kembali penglihatannya setelah menggunakan obat <a href="#buynow">Eyecaps</a> yang saya ciptakan</b>, saya pun berubah pikiran.</p>
+
+                <p>Intinya, formula saya bisa membantu menumbuhkan jaringan baru dan meningkatkan suplai darah ke mata.</p>
+
+                <p><b>Istri saya mengatakan bahwa dia mulai merasakan perubahan yang positif setelah 2 hari menggunakan <a href="#buynow">Eyecaps</a>.</b></p>
+
+                <p>Dan inilah yang terjadi pada semua pasien. Penglihatannya menjadi jelas, fokusnya menjadi lebih baik, dia bahkan dapat menghabiskan lebih banyak waktu di depan layar (dan Anda tahu sendiri betapa cahaya biru layar berbahaya bagi mata kita!)</p>
+
+                <p>Setelah satu bulan, dia bisa membaca kembali dengan mudah untuk cucu-cucunya, istri saya sangat senang bisa kembali melihat cucu-cucunya!</p>
+
+                <a href="#buynow">
+                    <img src="https://w.ladicdn.com/s750x600/5da6cb07a973800e7e31908d/wife-20221011030208-5eryg.jpg" class="rounded" alt=""
+                         style="width: 100%; margin-bottom: 10px;">
+                </a>
+                <div class="text-center" style="font-size: 0.8em">
+                    <i>Foto: Istri Dr. Ahmad, ibu Indah, yang kini dapat membacakan cerita untuk cucu-cucunya tanpa bantuan kacamata</i>
+                </div>
+            </div>
+
+            <br />
+            <div class="text-center"><h2 class="fw-bold">PRODUK TELAH DISERTIFIKASI OLEH KEMENTERIAN KESEHATAN, <span style="color: red">BPOM TR183319891</span></h2></div>
+
+            <img src="assets/img/Eyecap-id/img1.png" class="rounded" alt=""
+                 style="width: 100%; margin-bottom: 10px;">
+
+            <p><b>Efektivitas <a href="#buynow">Eyecaps</a> dihitung sesuai dengan metode standar (rasio jumlah pasien yang sembuh dengan jumlah total pasien dalam kelompok 100 orang yang meminum obat tersebut):</b></p>
+
+            <p>
+                <b>1. Memulihkan penglihatan Anda</b>
+                <ul>
+                    <li>Meningkatkan ketajaman penglihatan, memperkuat retina.</li>
+                    <li>Memperbaiki kerusakan jaringan-jaringan pada organ mata</li>
+                    <li>Memastikan fokus lensa mata yang baik</li>
+                    <li>Meningkatkan penglihatan siang maupun malam</li>
+                    <li>Menjaga kesehatan mata</li>
+                </ul>
+            </p>
+
+            <p>
+                <b>2. Mengurangi resiko penyakit mata</b>
+                <ul>
+                    <li>Mengatasi kerusakan mata</li>
+                    <li>Mengurangi risiko katarak dan glaukoma</li>
+                    <li>Mengurangi resiko kerusakan mata karena usia</li>
+                    <li>Menghilangkan risiko berkembangnya penyakit mata berbahaya</li>
+                </ul>
+            </p>
+
+            <p>
+                <b>3. Melindungi mata Anda dari efek negatif cahaya</b>
+                <ul>
+                    <li>Mengurangi kelelahan mata dan iritasi akibat sinar biru pada layar</li>
+                    <li>Mencegah degenerasi mata karena terkena banyak cahaya terang</li>
+                    <li>Mencegah kerusakan retina yang disebabkan oleh cahaya</li>
+                    <li>Mengurangi stres oksidatif yang ditimbulkan cahaya yang masuk pada mata</li>
+                </ul>
+            </p>
+
+            <p>
+                <b>4. Menghilangkan berbagai gejala kerusakan mata</b>
+                <ul>
+                    <li>Meringankan kemerahan, kelelahan, gatal dan mata kering</li>
+                    <li>Meringankan peradangan mata, ketegangan, kekeringan dan iritasi</li>
+                </ul>
+            </p>
+
+            <p>
+                <b>5. Menyehatkan mata Anda</b>
+                <ul>
+                    <li>Meningkatkan mikrosirkulasi, menjaga fungsi retina, mensuplai nutrisi untuk mata</li>
+                    <li>Memperkuat sirkulasi darah kapiler</li>
+                    <li>Meningkatkan responsivitas otot terhadap stres, mengurangi dan mencegah hypertonia</li>
+                    <li>Menurunkan glukosa darah sehingga dapat mencegah terjadinya retinopati diabetic</li>
+                </ul>
+            </p>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden: Apakah Anda berniat untuk menyebarkan keajaiban ini ke khalayak umum?</b> Mungkin obat ini bisa membantu banyak orang yang membutuhkan.
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> Sebenarnya, saya sudah melakukannya. <b>Saya menerbitkan hasil penelitian saya di majalah ilmiah</b> dan setelah itu, saya mendapatkan banyak panggilan telepon dan email tidak hanya dari jurnalis, tetapi juga dari dokter mata dan apoteker.</p>
+
+                <p>
+                    <a href="#buynow">
+                        <img src="https://w.ladicdn.com/s750x600/5da6cb07a973800e7e31908d/article_03-20221010104540-gms5-.jpg" class="rounded" alt=""
+                             style="width: 100%; margin-bottom: 10px;">
+                    </a>
+                    <div class="text-center" style="font-size: 0.8em">
+                        <i>Foto: Dr Ahmad berbicara tentang cara kerja obatnya di konferensi dokter mata</i>
+                    </div><br>
+                </p>
+
+                <p>Berbagai perusahaan farmasi <b>ingin membeli</b> formula <b><a href="#buynow" style="color: blue">Eyecaps</a></b> dari saya, <b>tetapi saya memutuskan untuk tidak menjualnya.</b></p>
+
+                <p>
+                    Saya tidak tahu berapa harga yang ingin mereka pasang untuk obat yang saya ciptakan ini. Bisa saja mereka menjualnya dengan harga yang sangat mahal sehingga banyak orang yang tidak mampu merasakan khasiat dari obat ini. <b>Mereka pasti akan lebih mementingkan kepentingan bisnis daripada kepentingan masyarakat umum.</b> Ini adalah bisnis besar dan tentu saja mereka tidak tertarik dengan kepentingan masyarakat umum.
+                </p>
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="50" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden:</b> Jadi, <a href="#buynow" style="color: blue">Eyecaps</a> tidak akan tersedia di apotek?
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> Ya, itu benar. Kami hanya ingin menawarkan harga yang terjangkau untuk semua orang yang membutuhkan produk ini. Jika produk ini dijual di apotek, itu berarti kami harus menaikkan harganya dan kami tidak ingin melakukannya.</p>
+
+                <p>
+                    Inilah sebabnya mengapa <a href="#buynow" style="color: blue">Eyecaps</a> hanya dapat dibeli dari sumber tepercaya seperti situs web Anda.
+                </p>
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden:</b> Wah benar-benar luar biasa, saya sangat mendukung niat baik Anda dalam memberikan solusi yang bagus dan terjangkau untuk penyakit mata! Ngomong-ngomong, berapa harganya?
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> Kami punya kabar baik untuk para pembaca Anda. Kami akan menawarkan diskon 50%, untuk waktu yang terbatas! Jika Anda ingin mencoba <a href="#buynow" style="color: blue">Eyecaps</a> inilah saat yang tepat! Anda hanya perlu mengisi formulir di bawah ini dan konsultan kami akan menghubungi Anda.</p>
+
+                <p>
+                    Kami melakukan ini agar Anda atau orang yang Anda cintai dapat mencoba sendiri dan dapat merasakan khasiat dari obat kami.
+                </p>
+
+                <p>
+                    Kami sudah menerima banyak ulasan, di mana orang-orang berterima kasih kepada kami atas obat yang sangat efektif dan aman ini. Mereka merekomendasikan <a href="#buynow" style="color: blue">Eyecaps</a> kepada teman-teman dan keluarga mereka! Rekomendasi dari mulut ke mulut ini merupakan salah satu bentuk penyebaran informasi terbaik untuk produk ini!
+                </p>
+
+                <p>
+                    Setelah penglihatan Istri saya berhasil pulih, tentu saja kami membagikannya kepada orang-orang yang kami cintai, seperti anak, kerabat, dan keluarga besar kami, produk ini sangat baik untuk memulihkan dan menjaga kesehatan mata, dengan mengkonsumsi <a href="#buynow" style="color: blue">Eyecaps</a>, kerabat saya yang sebelumnya sering menggunakan kacamata sekarang tidak lagi menggunakannya setelah 3 minggu!
+                </p>
+
+                <a href="#buynow">
+                    <img src="https://w.ladicdn.com/s750x700/5da6cb07a973800e7e31908d/eyecaps_id_2-20231009085559-svpk_.png" class="rounded" alt=""
+                         style="width: 100%; margin-bottom: 10px;">
+                </a>
+                <div class="text-center" style="font-size: 0.8em">
+                    <i>Foto:  Eyecaps akan menyelamatkan mata Anda selama bertahun-tahun ke depan</i>
+                </div>
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="50" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden:</b> Berapa lama diskon ini akan berlangsung?
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> Diskon ini akan berlangsung hingga persediaan produk <a href="#buynow" style="color: blue">Eyecaps</a> habis, artinya dalam waktu kurang lebih satu minggu.</p>
+
+                <p>
+                    Meski tidak ada iklan di TV atau radio, produk ini adalah produk unggulan yang populer hingga sering direkomendasikan oleh pengguna sebelumnya kepada teman dan keluarga mereka sendiri.
+                </p>
+
+                <p>
+                    Kami sebenarnya juga terkejut dan senang sekali mengetahui bahwa produk <a href="#buynow" style="color: blue">Eyecaps</a> ini dapat bermanfaat untuk orang banyak.
+                </p>
+
+                <p>
+                    Dan hari terakhir masa promo ini adalah pada tanggal <span id="today1"></span>
+                </p>
+
+                <a href="#buynow">
+                    <img src="https://w.ladicdn.com/s750x700/5da6cb07a973800e7e31908d/eyecaps_id_2-20231009085559-svpk_.png" class="rounded" alt=""
+                         style="width: 100%; margin-bottom: 10px;">
+                </a>
+                <div class="text-center" style="font-size: 0.8em">
+                    <i>Foto:  Eyecaps akan menyelamatkan mata Anda selama bertahun-tahun ke depan</i>
+                </div>
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_kor-20221010105747-bblsc.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <b style="color: blue">Koresponden:</b> Dr. Ahmad, apakah ada hal lain yang ingin Anda sampaikan kepada para pembaca kami sebelum mengakhiri wawancara ini?
+            </div>
+
+            <div class="alert border-primary alert-dismissible fade show" role="alert">
+                <img src="https://w.ladicdn.com/s400x400/5da6cb07a973800e7e31908d/ava_doc-1-20221010105747-lqeez.png" width="70" alt="Profile" class="rounded-circle" style="float: left; margin-right: 10px;">
+                <p><b style="color: red">Dr. Ahmad:</b> Saya hanya ingin menyampaikan - Jagalah kesehatan Anda.</p>
+
+                <p>
+                    Anda mungkin tidak menyadarinya, tetapi kemungkinan kita terkena penyakit mata mencapai 97-98%. Setelahnya, muncul gejala-gejala tidak menyenangkan yang membuat kita kesulitan dalam menikmati hidup. Masalah kesehatan yang serius semakin lama semakin berkembang.
+                </p>
+
+                <p>
+                    <b>Jangan menunggu hingga penyakit ini berkembang sepenuhnya, mulailah memulihkan penglihatan Anda sekarang juga!</b>
+                </p>
+            </div>
+
+            <a href="#buynow">
+                <img src="https://w.ladicdn.com/s550x750/5da6cb07a973800e7e31908d/eyemax-id-mess-1-20221011092619-xzh66-20231009090408-avxom.jpeg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+
+            <a href="#buynow">
+                <img src="https://w.ladicdn.com/s550x750/5da6cb07a973800e7e31908d/eyemax-id-mess-2-20221011092619-m5gij-20231009090423-ele7z.jpeg" class="rounded" alt=""
+                     style="width: 100%; margin-bottom: 10px;">
+            </a>
+        </div>
+
+        <div class="card mb-3" id="buynow">
+            <div class="card-body">
+                <div class="pt-4 pb-2">
+                    <img src="https://w.ladicdn.com/s750x700/5da6cb07a973800e7e31908d/eyecaps_id_2-20231009085559-svpk_.png" class="rounded" alt="" style="width: 100%; margin-bottom: 10px;">
+                    <h1 class="text-center fw-bold" style="color: red"><span id="today2"></span> jumlah paket obat yang tersisa sesuai dengan program:</h1>
+                    <h2 class="text-center">Memeriksa wilayah: <span style="color: green">Ada program bersubsidi di area Anda saat ini</span></h2>
+                    <br /><br />
+                    <h1 class="text-center">Formulir aplikasi resmi</h1>
+                    <h6 class="text-center" style="color: blue">№ 11982 dari 12 000 / <span id="today3"></span></h6>
+                    <br />
+                    <h2 class="card-title text-center pb-0 fs-4 fw-light">Dapatkan Eyecaps dengan harga</h2>
+                    <h1 class="text-center fw-bold text-danger" style="margin: 20px 0">490.000 RP.</h1>
+
+                    <div class="text-center alert border-primary alert-dismissible fade show" role="alert">
+                        <b>Untuk mendapatkan Eyecaps dengan diskon 50% tulis Nama dan Kontak Anda di kolom di bawah ini dan klik tombol "MEMBUAT PESANAN"</b>
+                    </div>
+                </div>
+
+                <div class="text-center" style="font-size: 3em; margin-bottom: 20px">
+                    <H3>Penerimaan aplikasi berakhir dengan:</H3>
+                    <span class="badge bg-danger"><i class="bi bi-clock-fill"></i> <span id="timer">30 : 00</span></span>
+                </div>
+
+                <form id="form" class="row g-3 needs-validation" action="#" method="post">
+                    <div class="col-12">
+                        <label for="yourName" class="form-label">Nama <i class="bi bi-person"></i></label>
+                        <input type="text" id="txtName" name="txtName" class="form-control" required>
+                        <div class="invalid-feedback"><i style="font-size: 0.9em">Silahkan masukan nama anda</i></div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="yourPhone" class="form-label">Nomor telepon <i class="bi bi-telephone"></i></label>
+                        <input type="text" id="txtPhone" name="txtPhone" class="form-control" required>
+                        <div class="invalid-feedback"><i style="font-size: 0.9em">Silakan masukkan nomor telepon</i></div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-danger w-100" type="submit" name="submit"><i class="bi bi-cart-plus-fill"></i> PESAN >>></button>
+                    </div>
+                </form>
+                <BR /><BR />
+                <P class="text-center" style="font-size: 0.8em">Data Anda dikirim langsung ke pabrik. Tidak ada seorang pun selain dia yang memiliki akses ke mereka.</P>
+
+                <p>
+                    <b>Catatan: promosi diskon 50% terbatas hingga tanggal <span id="today4" style="color: red"></span></b>
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <!-- Comments -->
+        <div class="container" style="--bs-gutter-x: 0rem !important">
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-7">
+                    <div class="card">
+
+                        <div class="p-3">
+
+                            <h5 class="text-success fw-light text-uppercase"><i class="bi bi-chat-dots-fill"></i> Komentar</h5>
+
+                        </div>
+                        <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
+                            <img src="assets/img/no-avatar.jpg" width="50" class="rounded-circle mr-2" style="margin-right:10px">
+                            <form action=""></form>
+                            <input type="text" id="txtComment" class="form-control" placeholder="Komentar" style="margin-right:5px; height: 43px">
+                            <button type="submit" class="btn btn-secondary" id="btnSendMsg"><i class="ri-send-plane-fill"></i></button>
+                        </div>
+                        <div class="mt-2">
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Annisa</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Saya tahu tentang produk ini dari adik saya. Eyecaps berhasil memulihkan penglihatannya hanya dalam waktu 3 minggu saja. Setelah membaca kalau sekarang ada diskon, saya langsung pesan tiga botol sekaligus, mumpung harga promo! Terima kasih!
+                                        <img src="https://w.ladicdn.com/s600x700/5da6cb07a973800e7e31908d/eyecaps-id-2-20231009092223-g0aoz.jpg" class="rounded" alt="" style="width: 100%; margin:5px 0;">
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">147 suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 1h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar2.webp" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Intan</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Aku juga udah pesan 3. Aku juga udah ngerasain penglihatan buram, semoga obat dokter bisa bantu memulihkan mataku!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">232 Suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 1h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Dr. Ahmad</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Tentu saja obat ini akan membantu! Anda akan membuktikannya sendiri! Penglihatan Anda akan semakin membaik hari demi hari!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">50 Suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar6.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Indra Batubara</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Terima kasih. Saya sudah memesan Eyecaps memanfaatkan promosi ini. Saya akan coba pengobatannya. Selama bertahun-tahun kondisi penglihatan semakin menurun, tapi saya takut dioperasi. Tetangga saya yang melakukannya malah semakin menderita 2 tahun ini. Kondisinya memburuk dan tidak kunjung sembuh.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">23 Suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar9.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Firman Hutomo</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Belum lama ini saya mencoba memulihkan penglihatan saya dengan obat ini. Baru minggu kedua menggunakannya dan sekarang penglihatan saya menjadi lebih tajam. Sebelumnya saya tidak bisa melihat nomer angkutan umum dari lantai 5, tapi sekarang jadi terlihat jelas.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">98 Suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar10.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Ratnasari</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Sudah sejak lama mata saya gatal-gatal dan juga berair. Tetapi sekarang sudah jauh lebih baik berkat Eyecaps. Saya mengkonsumsinya secara rutin setiap hari. Sekarang, melihat rambu-rambu jalan jadi lebih jelas dan mudah dibaca dan saya bisa menyetir mobil di malam hari untuk pertama kalinya dalam beberapa tahun tanpa masalah. Saya meminta suami saya untuk mengkonsumsi obat ini juga karena penglihatannya juga memburuk dengan cepat dan saya pikir ini akan membantunya juga.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">141 Suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar11.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Anggi</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Saya baru mengkonsumsi Eyecaps selama beberapa hari! Tapi, saya sudah merasakan perubahan kondisi penglihatan saya jadi jauh lebih baik! Semuanya menjadi lebih jelas dan lebih berwarna.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">18 Suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 2h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar15.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Herman</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Kalo boleh jujur saya merasa obat ini sangat ajaib karena dengan obat ini kerusakan mata saya yang bertahun-tahun saya coba sembuhkan sekarang sudah membaik! Obat ini disarankan oleh dokter mata sebagai cara untuk memperlambat kerusakan mata dan memperbaiki saluran darah yang ada pada mata. Saya senang sekali bisa menggunakan produk alami daripada produk berbahan kimia yang tidak pernah berhasil.
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">103 Suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 3h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar16.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Raditya</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Memang ajaib ini obat! Pak dokter nggak cuman bantu istrinya, tapi juga semua orang yang punya masalah penglihatan!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">55 Suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 3h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/avatar18.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Linda</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Saya sudah mengkonsumsi obat ini selama beberapa bulan, dan dokter mata saya memberitahu saya bahwa penyakit degenerasi makula saya sudah tidak ada lagi. Dokter mengatakan jika mata saya sudah jauh lebih sehat. Melihat manfaatnya, saya akan terus meminumnya. Toh, apa ruginya? 😊
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">47 Suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 3h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row p-3">
+                                <img src="assets/img/no-avatar.jpg" width="40" height="40" class="rounded-circle mr-3" style="margin-right:10px">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="mr-2"><b>Dr. Ahmad</b></span>
+                                        </div>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        Terimakasih atas ulasannya. Namun saya ingin mengingatkan, harap pastikan bahwa Anda tidak membeli produk yang palsu. Saya sudah beberapa kali mendengar tentang kasus seperti itu. Eyecaps hanya dapat dibeli di situs web ini!
+                                    </p>
+                                    <div class="d-flex flex-row user-feed" style="font-size: 0.9em">
+                                        <span class="wish"><i class="ri-heart-pulse-fill text-success"></i> <span class="text-success" style="margin-top: -3px">17 Suka</span></span>
+                                        <span class="ml-3" style="margin-left: 20px"><i class="ri-time-line"></i> 3h</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End comments -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright fw-light" style="margin-left: 10px; margin-right: 10px;">
+            Hak Cipta &copy; 2023 . Semua hak dilindungi undang-undang. <br />*Produk ini bukan obat dan tidak menggantikan obat
+        </div>
+    </footer><!-- End Footer -->
+
+    <script>
+        var date = new Date();
+        var thu = date.getDay();
+        var ngay = date.getDate();
+        var thang = date.getMonth() + 1;
+        var nam = date.getFullYear();
+
+        document.getElementById("today").innerHTML = " JAKARTA • " + ngay + "/" + thang + "/" + nam;
+        document.getElementById("today1").innerHTML = ngay + "/" + thang + "/" + nam;
+        document.getElementById("today2").innerHTML = ngay + "/" + thang + "/" + nam;
+        document.getElementById("today3").innerHTML = ngay + "/" + thang + "/" + nam;
+        document.getElementById("today4").innerHTML = ngay + "/" + thang + "/" + nam;
+
+        // Countdown timer
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes,
+                seconds;
+
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + " : " + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            //var duration = 10 * 60; // 10 minutes in seconds
+            var duration = 30 * 60; // 30 minutes in seconds
+            var display = document.getElementById("timer");
+            startTimer(duration, display);
+        };
+
+    </script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
