@@ -49,11 +49,11 @@
                     url: "https://tracking.affscalecpa.com/api/v2/affiliate/leads?api-key=220438f60bfa3728e2ba82cdca62706e3ea42015&goal_id=373",
                     data: postData,
                     success: function (response) {
-                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        var link = 'thanks-eyecap.html?name=' + name + '&phone=' + phone;
                         window.location.href = link;
                     },
                     error: function (xhr, status, error) {
-                        var link = 'thanks.html?name=' + name + '&phone=' + phone;
+                        var link = 'thanks-eyecap.html?name=' + name + '&phone=' + phone;
                         window.location.href = link;
                     }
                 });
