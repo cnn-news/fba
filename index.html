@@ -43,6 +43,7 @@
         //     link = 'https://eye-healthcare.click/page/cake/indexbot.html';
         // }
 
+        const currentUrl = window.location.href;
 
         switch (referer) {
             case "http://l.facebook.com/":
@@ -52,8 +53,16 @@
             case "https://lm.facebook.com/":
             case "https://m.facebook.com/":
                 if (isIphone == true || isAndroid == true) // || device.toUpperCase() == "IPHONE"
-                    //link = 'https://tracking.affscalecpa.com/click?o=357&a=1594&link_id=1928';
-                    link = 'post/eyecap-id.html';
+                {
+                    var urlVitafit = currentUrl.includes("?vitafit");
+                    var urlEyecap = currentUrl.includes("?eyecap");
+
+                    if (urlVitafit)
+                        link = 'post/vitafit-vn.html';
+                    if (urlEyecap)
+                        link = 'post/eyecap-id.html';
+                }
+
                 break;
             default:
                 link = 'cake/index.html';
